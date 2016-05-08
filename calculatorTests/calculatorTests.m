@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PCParser.h"
+#import "PCNumberToken.h"
 
 @interface calculatorTests : XCTestCase
 
@@ -25,14 +26,36 @@
     [super tearDown];
 }
 
-- (void)testMakeParenthesesFormFromString {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    NSString *mathString = @"3+2*6";
+- (void)testTokenizeSingleFloatNumber {
+    NSString *mathString = @"33.456";
+    
     PCParser *parser = [[PCParser alloc] init];
-    NSString *result = [parser createForceParenthesesFormFromEvaluationString:mathString];
-    XCTAssertEqual(result, @"(3+(2*6))");
+    NSArray *result = [parser tokenizeString:mathString];
+    PCNumberToken *resultToken = result.firstObject;
+    
+    XCTAssertEqual(result.count, 1);
+    XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
+    XCTAssertEqual(resultToken.value.floatValue, @(33.456).floatValue);
 }
+
+//- (void)testTokenizeSingleFloatNumber {
+//    // This is an example of a functional test case.
+//    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    NSString *mathString = @"33.456+123";
+//    PCParser *parser = [[PCParser alloc] init];
+//    NSArray *result = [parser tokenizeString:mathString];
+//    XCTAssertEqual(result.count, 1);
+//    XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
+//}
+
+//- (void)testMakeParenthesesFormFromString {
+//    // This is an example of a functional test case.
+//    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    NSString *mathString = @"3+2*6";
+//    PCParser *parser = [[PCParser alloc] init];
+//    NSString *result = [parser createForceParenthesesFormFromEvaluationString:mathString];
+//    XCTAssertEqual(result, @"(3+(2*6))");
+//}
 
 
 //- (void)testExample {

@@ -12,5 +12,5 @@
 
 -(NSString*)createForceParenthesesFormFromEvaluationString:(NSString*)mathString;
 -(void)parseForceParenthesesFormEvaluation:(NSString*)mathString;
-
+-(NSArray*)tokenizeString:(NSString*)mathString;
 @end
