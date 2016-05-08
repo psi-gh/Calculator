@@ -59,8 +59,8 @@
                 
                 if ([token isKindOfClass:[PCGroupToken class]]) {
                     PCGroupToken *groupToken = (PCGroupToken*)token;
-                    NSArray *childsTokens = [self tokenizeString:groupToken.mnemonic];
-                    groupToken.childs = childsTokens;
+                    NSArray *groupedTokens = [self tokenizeString:groupToken.mnemonic];
+                    groupToken.groupedTokens = groupedTokens;
                 }
                 
                 if (buffer.currentIndex >= buffer.endIndex) {
