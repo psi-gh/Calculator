@@ -102,6 +102,18 @@
     XCTAssertEqual([result isEqualToNumber:@(3+(2+1)+1)], YES);
 }
 
+- (void)testEvaluateDivision {
+    NSString *mathString = @"16/2";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    NSNumber *result = [rootNode getResult];
+    XCTAssertEqual([result isEqualToNumber:@(16/2)], YES);
+}
+
 - (void)testEvaluateOperationsWithEqualPrecedence {
     NSString *mathString = @"3+(2+1)-9";
     PCParser *parser = [[PCParser alloc] init];
