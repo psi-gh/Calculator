@@ -15,6 +15,8 @@
 
 +(instancetype)initWithString:(NSString*)string;
 
+-(NSString*)substringFromIndex:(NSUInteger)from ToIndex:(NSUInteger)to;
+
 -(NSString*)peekNextCharacters:(NSInteger)delta;
 -(unichar)peekNextCharacter;
 -(unichar)getCurrentCharacter;

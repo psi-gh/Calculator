@@ -70,4 +70,11 @@
     return self.originalString.length-1;
 }
 
+-(NSString*)substringFromIndex:(NSUInteger)from ToIndex:(NSUInteger)to
+{
+    NSString *result = [self.originalString substringToIndex:to+1];
+    result = [result substringFromIndex:from];
+    return result;
+}
+
 @end

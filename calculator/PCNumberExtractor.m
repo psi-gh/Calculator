@@ -14,10 +14,7 @@
 
 -(BOOL)matchesPreconditionsInBuffer:(PCTokenCharacterBuffer*)buffer
 {
-//    NSString *nextCharacter = [buffer getCurrentCharacter];
     unichar character = [buffer getCurrentCharacter];
-//    [nextCharacter getCharacters:&character range:NSMakeRange(0, 1)];
-    
     return [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:character];
 }
 
@@ -28,7 +25,7 @@
     NSArray *substrings = [string componentsSeparatedByCharactersInSet:
                             [[NSCharacterSet floatNumberCharacterSet] invertedSet]];
     NSString *foundString = substrings.firstObject;
-    [buffer resetTo:buffer.currentIndex + foundString.length];
+    [buffer resetTo:buffer.currentIndex + foundString.length-1];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;

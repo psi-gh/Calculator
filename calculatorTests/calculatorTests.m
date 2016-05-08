@@ -10,6 +10,7 @@
 #import "PCParser.h"
 #import "PCNumberToken.h"
 #import "PCAddOperatorToken.h"
+#import "PCGroupToken.h"
 
 @interface calculatorTests : XCTestCase
 
@@ -37,6 +38,18 @@
     XCTAssertEqual(result.count, 1);
     XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
     XCTAssertEqual(resultToken.value.floatValue, @(33.456).floatValue);
+}
+
+- (void)testTokenizeGrouping {
+    NSString *mathString = @"(1+2)";
+    
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *result = [parser tokenizeString:mathString];
+    PCGroupToken *resultToken = result.firstObject;
+    
+    XCTAssertEqual(result.count, 1);
+    XCTAssertEqual([result.firstObject isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([resultToken.mnemonic isEqualToString:@"1+2"], YES);
 }
 
 - (void)testTokenizeSimpleAddOperation {

@@ -8,9 +8,11 @@
 
 #import "PCParser.h"
 #import "PCToken.h"
+#import "PCGroupToken.h"
 
 #import "PCNumberExtractor.h"
 #import "PCOperatorExtractor.h"
+#import "PCGroupExctractor.h"
 
 #import "PCAddOperatorToken.h"
 
@@ -32,8 +34,10 @@
     self = [super init];
     if (self) {
         self.operators = @[[[PCAddOperatorToken alloc] init]];
+        
         self.extractors = @[[[PCNumberExtractor alloc] init],
-                            [PCOperatorExtractor initWithOperators:self.operators]];
+                            [PCOperatorExtractor initWithOperators:self.operators],
+                            [[PCGroupExctractor alloc] init]];
     }
     
     return self;
@@ -45,17 +49,26 @@
     
     NSMutableArray *resultTokens = @[].mutableCopy;
     
-    for (; buffer.currentIndex <= buffer.endIndex;) {
-//        while ([[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer getCurrentCharacter]]) {
-//            [buffer consumeCharacters:1];
-//        }
-        
+    for (;buffer.currentIndex <= buffer.endIndex;) {
         for (PCExtractor *extractor in self.extractors) {
             NSUInteger startIndex = buffer.currentIndex;
             if ([extractor matchesPreconditionsInBuffer:buffer]) {
                 [buffer resetTo:startIndex];
                 PCToken *token = [extractor extractFromBuffer:buffer];
                 [resultTokens addObject:token];
+                
+                if ([token isKindOfClass:[PCGroupToken class]]) {
+                    PCGroupToken *groupToken = (PCGroupToken*)token;
+                    NSArray *childsTokens = [self tokenizeString:groupToken.mnemonic];
+                    groupToken.childs = childsTokens;
+                }
+                
+                if (buffer.currentIndex >= buffer.endIndex) {
+                    return resultTokens;
+                } else {
+                    [buffer consumeCharacters:1];
+                }
+                
                 break;
             }
         }

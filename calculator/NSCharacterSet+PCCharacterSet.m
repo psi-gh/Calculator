@@ -15,4 +15,15 @@
     return [NSCharacterSet characterSetWithCharactersInString:@"1234567890."];
 }
 
++(NSCharacterSet*)openGroupingSet
+{
+    return [NSCharacterSet characterSetWithCharactersInString:@"("];
+}
+
++(NSCharacterSet*)closeGroupingSet
+{
+    return [NSCharacterSet characterSetWithCharactersInString:@")"];
+
+}
+
 @end

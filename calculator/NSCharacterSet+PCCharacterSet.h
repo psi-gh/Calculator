@@ -11,5 +11,7 @@
 @interface NSCharacterSet (PCCharacterSet)
 
 +(NSCharacterSet*)floatNumberCharacterSet;
++(NSCharacterSet*)openGroupingSet;
++(NSCharacterSet*)closeGroupingSet;
 
 @end

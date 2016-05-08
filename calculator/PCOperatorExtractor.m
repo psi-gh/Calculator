@@ -46,6 +46,8 @@
     
     NSString *result = [buffer.originalString substringWithRange:NSMakeRange(startPosition, stopIndex-startPosition)];
     
+    [buffer resetTo:startPosition + result.length-1];
+
     for (PCToken *token in self.allowedOperators) {
         if ([token.mnemonic isEqualToString:result]) {
             PCToken *operatorToken = [[[token class] alloc] init];
