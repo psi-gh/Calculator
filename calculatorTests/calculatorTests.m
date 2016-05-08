@@ -70,7 +70,7 @@
     PCGroupToken *groupToken = result[2];
 
     XCTAssertEqual(result.count, 5);
-    XCTAssertEqual(groupToken.childs.count, 3);
+    XCTAssertEqual(groupToken.groupedTokens.count, 3);
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "PCNumberExtractor.h"
 #import "PCNumberToken.h"
+#import "PCRawPrimitiveValueToken.h"
 #import "NSCharacterSet+PCCharacterSet.h"
 
 @implementation PCNumberExtractor

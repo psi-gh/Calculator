@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCNumberExtractor.m"
-            timestampString = "484401442.356227"
+            timestampString = "484409341.492024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "-extractFromBuffer:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCParser.m"
-            timestampString = "484401565.713712"
+            timestampString = "484410689.048652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-tokenizeString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCParser.m"
-            timestampString = "484403281.749594"
+            timestampString = "484410689.048652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "-tokenizeString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -215,11 +215,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCParser.m"
-            timestampString = "484401565.713712"
+            timestampString = "484410689.048652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-tokenizeString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -231,11 +231,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCParser.m"
-            timestampString = "484401565.713712"
+            timestampString = "484410689.048652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-tokenizeString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -606,11 +606,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculator/PCParser.m"
-            timestampString = "484403467.715837"
+            timestampString = "484410689.048652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-tokenizeString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -704,6 +704,131 @@
                   startingLineNumber = "71"
                   endingLineNumber = "71"
                   offsetFromSymbolStart = "1098">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "calculator/PCParser.m"
+            timestampString = "484410725.563001"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "calculator/PCParser.m"
+            timestampString = "484410786.828458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-tokenizeString:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "calculatorTests/calculatorTests.m"
+            timestampString = "484410839.972278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-testTokenizeStringWithManyOperationsAndGrouping"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484410894.034462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "916">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484410894.034661"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1063">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484410894.035022"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "2738">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484410894.035251"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "2861">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484410894.035469"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "2989">
                </Location>
             </Locations>
          </BreakpointContent>
