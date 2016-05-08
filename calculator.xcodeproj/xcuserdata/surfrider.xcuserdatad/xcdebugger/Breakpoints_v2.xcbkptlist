@@ -874,7 +874,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "calculatorTests/calculatorTests.m"
@@ -887,14 +887,14 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[calculatorTests testEvaluateOperationsWithDifferentPrecedence]"
                   moduleName = "calculatorTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
-                  timestampString = "484431350.756848"
+                  timestampString = "484431803.745387"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "126"
@@ -902,14 +902,14 @@
                   offsetFromSymbolStart = "277">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[calculatorTests testEvaluateOperationsWithDifferentPrecedence]"
                   moduleName = "calculatorTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
-                  timestampString = "484431350.757145"
+                  timestampString = "484431803.74586"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "126"
@@ -917,14 +917,14 @@
                   offsetFromSymbolStart = "443">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[calculatorTests testEvaluateOperationsWithDifferentPrecedence]"
                   moduleName = "calculatorTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
-                  timestampString = "484431350.75742"
+                  timestampString = "484431803.746151"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "126"
@@ -932,14 +932,14 @@
                   offsetFromSymbolStart = "1122">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[calculatorTests testEvaluateOperationsWithDifferentPrecedence]"
                   moduleName = "calculatorTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
-                  timestampString = "484431350.75762"
+                  timestampString = "484431803.746795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "126"
@@ -947,14 +947,14 @@
                   offsetFromSymbolStart = "1293">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[calculatorTests testEvaluateOperationsWithDifferentPrecedence]"
                   moduleName = "calculatorTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
-                  timestampString = "484431350.75782"
+                  timestampString = "484431803.747045"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "126"

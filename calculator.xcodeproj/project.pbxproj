@@ -33,6 +33,7 @@
 		A69E97E11CDFCB1800642EFB /* PCSubstractOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */; };
 		A69E97E41CDFCFE400642EFB /* PCMultiplicationOperationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */; };
 		A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */; };
+		A69E97E91CDFD75A00642EFB /* PCDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCMultiplicationOperationToken.h; sourceTree = "<group>"; };
 		A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCMultiplicationOperationToken.m; sourceTree = "<group>"; };
 		A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTokenizationTests.m; sourceTree = "<group>"; };
+		A69E97E71CDFD75A00642EFB /* PCDivisionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCDivisionOperatorToken.h; sourceTree = "<group>"; };
+		A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDivisionOperatorToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */,
 				A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */,
 				A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */,
+				A69E97E71CDFD75A00642EFB /* PCDivisionOperatorToken.h */,
+				A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */,
 			);
 			name = Tokenization;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
 				A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */,
 				A69E97D41CDF87E300642EFB /* PCOperatorToken.m in Sources */,
+				A69E97E91CDFD75A00642EFB /* PCDivisionOperatorToken.m in Sources */,
 				A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */,
 				A69E97AE1CDF34B900642EFB /* PCExtractor.m in Sources */,
 				A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */,

@@ -13,6 +13,7 @@
 #import "PCMultiplicationOperationToken.h"
 #import "PCSubstractOperatorToken.h"
 #import "PCGroupToken.h"
+#import "PCDivisionOperatorToken.h"
 
 @interface PCTokenizationTests : XCTestCase
 
@@ -72,6 +73,16 @@
     
     XCTAssertEqual(result.count, 3);
     XCTAssertEqual([result[1] isKindOfClass:[PCSubstractOperatorToken class]], YES);
+}
+
+- (void)testTokenizeSimpleDivisionOperation {
+    NSString *mathString = @"4/2";
+    
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *result = [parser tokenizeString:mathString];
+    
+    XCTAssertEqual(result.count, 3);
+    XCTAssertEqual([result[1] isKindOfClass:[PCDivisionOperatorToken class]], YES);
 }
 
 - (void)testTokenizeSimpleMultiplicationOperation {
