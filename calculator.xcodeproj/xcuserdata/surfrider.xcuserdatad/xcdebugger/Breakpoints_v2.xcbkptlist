@@ -615,5 +615,98 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "calculatorTests/calculatorTests.m"
+            timestampString = "484403861.400605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-testTokenizeStringWithManyOperationsAndGrouping"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484403800.586405"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484403800.586714"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484403800.587061"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484403800.587327"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "976">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[calculatorTests testTokenizeStringWithManyOperationsAndGrouping]"
+                  moduleName = "calculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/surfrider/Documents/xCode%20Projects/calculator/calculatorTests/calculatorTests.m"
+                  timestampString = "484403800.587723"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1098">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

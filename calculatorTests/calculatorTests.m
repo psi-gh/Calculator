@@ -62,4 +62,15 @@
     XCTAssertEqual([result[1] isKindOfClass:[PCAddOperatorToken class]], YES);
 }
 
+- (void)testTokenizeStringWithManyOperationsAndGrouping {
+    NSString *mathString = @"3+(1+2)+4";
+    
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *result = [parser tokenizeString:mathString];
+    PCGroupToken *groupToken = result[2];
+
+    XCTAssertEqual(result.count, 5);
+    XCTAssertEqual(groupToken.childs.count, 3);
+}
+
 @end
