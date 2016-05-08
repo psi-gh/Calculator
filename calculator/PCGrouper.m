@@ -14,76 +14,11 @@
 
 @interface PCGrouper()
 
-//@property (nonatomic, assign) NSUInteger currentTokenIndex;
-//@property (nonatomic, strong) NSMutableArray *tokens;
 @property (nonatomic, assign) NSUInteger endIndex;
 
 @end
 
 @implementation PCGrouper
-
-//-(NSArray *)groupAllTokensInArray:(NSArray*)tokens {
-//    self.tokens = [NSMutableArray arrayWithArray:tokens];
-//    self.currentTokenIndex = 0;
-//    id token;
-//    id nextToken = nil;
-//    id lhs;
-//    
-//    NSMutableArray *arrayForNewGroup;
-//    
-//    DDPrecedence *currentPrecedence = 0;
-//    
-//    NSUInteger indexOfLfs = 0;
-//    NSUInteger indexOfOperand = 0;
-//    NSUInteger indexOfRfs = 0;
-//    NSUInteger indexOfNextOperand = 0;
-//
-//    while (1) {
-//        arrayForNewGroup = @[].mutableCopy;
-//        token =  self.tokens[self.currentTokenIndex];
-//        while (![token isKindOfClass:[PCOperatorToken class]]) {
-//            [self consume];
-//            token = self.tokens[self.currentTokenIndex];
-//        }
-//        
-//        indexOfOperand = self.currentTokenIndex;
-//        indexOfLfs = self.currentTokenIndex - 1;
-//        
-//        [arrayForNewGroup addObject:self.tokens[self.currentTokenIndex - 1]];
-//        [arrayForNewGroup addObject:self.tokens[self.currentTokenIndex]];
-//        
-//        
-//        do {
-//            if (self.currentTokenIndex == self.endIndex) {
-//                [arrayForNewGroup addObject:self.tokens[self.currentTokenIndex]];
-//                nextToken = nil;
-//                break;
-//            }
-//            
-//            [self consume];
-//            nextToken = self.tokens[self.currentTokenIndex];
-//        } while (![nextToken isKindOfClass:[PCOperatorToken class]]);
-//        
-//        indexOfNextOperand = self.currentTokenIndex;
-//        
-//        if ([[PCOperatorSet defaultOperatorSet] precedenceForOperation:token] >=
-//            [[PCOperatorSet defaultOperatorSet] precedenceForOperation:nextToken]) {
-//            self.currentTokenIndex -= 1;
-//            [arrayForNewGroup addObject:self.tokens[self.currentTokenIndex]];
-//            PCGroupToken *groupToken = [[PCGroupToken alloc] init];
-//            groupToken.groupedTokens = [NSArray arrayWithArray:arrayForNewGroup];
-//            [self.tokens insertObject:groupToken atIndex:self.currentTokenIndex];
-//            [self.tokens removeObjectsInArray:arrayForNewGroup];
-//            if (nextToken != nil) self.currentTokenIndex = [self.tokens indexOfObject:nextToken];
-//        }
-//        
-//        if (nextToken == nil) {
-//            break;
-//        }
-//    }
-//    
-//    return tokens;
-//}
 
 -(NSArray *)groupAllTokensInArray:(NSArray*)tokens {
     NSMutableArray *resultTokens = [NSMutableArray arrayWithArray:tokens];
@@ -159,67 +94,5 @@
         }
     }
 }
-
-//
-//-(PCEvaluationTreeNode*)generateEvaluationTreeFromTokensArray:(NSArray *)tokens
-//{
-//    self.tokens = tokens;
-//    self.currentTokenIndex = 0;
-//    id token = self.tokens[self.currentTokenIndex];
-//    id lhs;
-//    PCEvaluationTreeNode *node = [[PCEvaluationTreeNode alloc] init];
-//    PCEvaluationTreeNode *currentNode = node;
-//    DDPrecedence *currentPrecedence = 0;
-//
-//    for (;self.currentTokenIndex < self.endIndex;) {
-//        
-////        if ([token isKindOfClass:[PCPrimitiveValueToken class]]) {
-////            lhs = token;
-////            if ([self peekNextToken]
-////        }
-//
-//        if ([token isKindOfClass:[PCPrimitiveValueToken class]]) {
-//            if (!lhs) {
-//                lhs = token;
-//                [currentNode.childTokens addObject:lhs];
-//                [self consume];
-//            }
-//        } else if ([token isKindOfClass:[PCOperatorToken class]]) {
-//            currentPrecedence = PCOperatorToken
-//            if (lhs) {
-//                currentNode.token = token;
-//                do {
-//                    [self consume]
-//                }
-//            }
-//        }
-//
-//        
-////        if ([token isKindOfClass:[PCPrimitiveValueToken class]]) {
-////            
-////        } else if ([token isKindOfClass:[PCOperatorToken class]]) {
-////            
-////        }
-//    }
-//}
-
-//
-//-(PCToken*)parseExpressionWithLhs:(PCToken*)lhs minPrecedence:(DDPrecedence)precedence {
-//    return nil;
-//}
-//    
-//-(PCToken*)peekNextToken {
-//    return self.tokens[self.currentTokenIndex+1];
-//}
-//
-//-(void)consume {
-//    self.currentTokenIndex += 1;
-//}
-//
-//-(NSUInteger)endIndex
-//{
-//    return (self.tokens.count - 1);
-//}
-//
 
 @end

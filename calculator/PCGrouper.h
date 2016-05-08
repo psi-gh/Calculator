@@ -11,7 +11,6 @@
 
 @interface PCGrouper : NSObject
 
--(PCEvaluationTreeNode*)generateEvalueationTreeFromTokensArray:(NSArray *)tokens;
 -(PCEvaluationTreeNode*)generateEvaluationTreeFromGroupedTokens:(NSArray *)tokens;
 -(NSArray *)groupAllTokensInArray:(NSArray*)tokens;
 
