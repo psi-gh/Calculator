@@ -10,6 +10,7 @@
 #import "PCParser.h"
 #import "PCNumberToken.h"
 #import "PCAddOperatorToken.h"
+#import "PCMultiplicationOperationToken.h"
 #import "PCSubstractOperatorToken.h"
 #import "PCGroupToken.h"
 #import "PCGrouper.h"
@@ -28,61 +29,6 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-}
-
-- (void)testTokenizeSingleFloatNumber {
-    NSString *mathString = @"33.456";
-    
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *result = [parser tokenizeString:mathString];
-    PCNumberToken *resultToken = result.firstObject;
-    
-    XCTAssertEqual(result.count, 1);
-    XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
-    XCTAssertEqual([resultToken getValue].floatValue, @(33.456).floatValue);
-}
-
-- (void)testTokenizeGrouping {
-    NSString *mathString = @"(1+2)";
-    
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *result = [parser tokenizeString:mathString];
-    PCGroupToken *resultToken = result.firstObject;
-    
-    XCTAssertEqual(result.count, 1);
-    XCTAssertEqual([result.firstObject isKindOfClass:[PCGroupToken class]], YES);
-    XCTAssertEqual([resultToken.mnemonic isEqualToString:@"1+2"], YES);
-}
-
-- (void)testTokenizeSimpleAddOperation {
-    NSString *mathString = @"1+2";
-    
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *result = [parser tokenizeString:mathString];
-    
-    XCTAssertEqual(result.count, 3);
-    XCTAssertEqual([result[1] isKindOfClass:[PCAddOperatorToken class]], YES);
-}
-
-- (void)testTokenizeSimpleSubstractOperation {
-    NSString *mathString = @"1-2";
-    
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *result = [parser tokenizeString:mathString];
-    
-    XCTAssertEqual(result.count, 3);
-    XCTAssertEqual([result[1] isKindOfClass:[PCSubstractOperatorToken class]], YES);
-}
-
-- (void)testTokenizeStringWithManyOperationsAndGrouping {
-    NSString *mathString = @"3-(1+2)+4";
-    
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *result = [parser tokenizeString:mathString];
-    PCGroupToken *groupToken = result[2];
-
-    XCTAssertEqual(result.count, 5);
-    XCTAssertEqual(groupToken.groupedTokens.count, 3);
 }
 
 - (void)testGrouping {
@@ -104,6 +50,24 @@
     XCTAssertEqual([groupedToken3lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([groupedToken4lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([number2lvl isKindOfClass:[PCNumberToken class]], YES);
+}
+
+- (void)testGroupingWithDifferentPrecedence {
+    NSString *mathString = @"1+2*3+4";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCGroupToken *groupedToken1lvl = groupingResult.firstObject;
+    PCGroupToken *groupedToken2lvl = groupedToken1lvl.groupedTokens.firstObject;
+    PCGroupToken *groupedToken3lvl = groupedToken2lvl.groupedTokens.lastObject;
+    PCOperatorToken *operationToken4lvl = groupedToken3lvl.groupedTokens[1];
+
+    XCTAssertEqual([groupedToken1lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken2lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken3lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([operationToken4lvl isKindOfClass:[PCMultiplicationOperationToken class]], YES);
 }
 
 - (void)testBuildingEvaluatingTree {
@@ -135,10 +99,10 @@
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
     PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
-    XCTAssertEqual([result isEqualToNumber:@(7)], YES);
+    XCTAssertEqual([result isEqualToNumber:@(3+(2+1)+1)], YES);
 }
 
-- (void)testEvaluateWithTwoDifferentOperations {
+- (void)testEvaluateOperationsWithEqualPrecedence {
     NSString *mathString = @"3+(2+1)-9";
     PCParser *parser = [[PCParser alloc] init];
     NSArray *tokensArray = [parser tokenizeString:mathString];
@@ -147,8 +111,19 @@
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
     PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
-    XCTAssertEqual([result isEqualToNumber:@(-3)], YES);
+    XCTAssertEqual([result isEqualToNumber:@(3+(2+1)-9)], YES);
 }
 
+- (void)testEvaluateOperationsWithDifferentPrecedence {
+    NSString *mathString = @"1+2*(3+4)";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    NSNumber *result = [rootNode getResult];
+    XCTAssertEqual([result isEqualToNumber:@(1+2*(3+4))], YES);
+}
 
 @end

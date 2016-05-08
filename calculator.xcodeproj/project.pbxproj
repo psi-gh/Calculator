@@ -31,6 +31,8 @@
 		A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */; };
 		A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */; };
 		A69E97E11CDFCB1800642EFB /* PCSubstractOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */; };
+		A69E97E41CDFCFE400642EFB /* PCMultiplicationOperationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */; };
+		A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,9 @@
 		A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluationTreeNode.m; sourceTree = "<group>"; };
 		A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSubstractOperatorToken.h; sourceTree = "<group>"; };
 		A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSubstractOperatorToken.m; sourceTree = "<group>"; };
+		A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCMultiplicationOperationToken.h; sourceTree = "<group>"; };
+		A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCMultiplicationOperationToken.m; sourceTree = "<group>"; };
+		A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTokenizationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +164,7 @@
 			children = (
 				A69E97961CDDFCCA00642EFB /* calculatorTests.m */,
 				A69E97981CDDFCCA00642EFB /* Info.plist */,
+				A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */,
 			);
 			path = calculatorTests;
 			sourceTree = "<group>";
@@ -198,6 +204,8 @@
 				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
 				A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */,
 				A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */,
+				A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */,
+				A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */,
 			);
 			name = Tokenization;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 				A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */,
 				A69E97AE1CDF34B900642EFB /* PCExtractor.m in Sources */,
 				A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */,
+				A69E97E41CDFCFE400642EFB /* PCMultiplicationOperationToken.m in Sources */,
 				A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */,
 				A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */,
 				A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */,
@@ -381,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69E97971CDDFCCA00642EFB /* calculatorTests.m in Sources */,
+				A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

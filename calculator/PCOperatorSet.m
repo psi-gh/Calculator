@@ -9,6 +9,7 @@
 #import "PCOperatorSet.h"
 #import "PCAddOperatorToken.h"
 #import "PCSubstractOperatorToken.h"
+#import "PCMultiplicationOperationToken.h"
 
 @implementation PCOperatorSet
 
@@ -31,6 +32,7 @@
         
         [self addOperation:[[PCAddOperatorToken alloc] init] precedence:DDPrecedenceAddition];
         [self addOperation:[[PCSubstractOperatorToken alloc] init] precedence:DDPrecedenceAddition];
+        [self addOperation:[[PCMultiplicationOperationToken alloc] init] precedence:DDPrecedenceMultiplication];
     }
     return self;
 }
