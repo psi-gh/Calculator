@@ -7,6 +7,7 @@
 //
 
 #import "PCOperatorExtractor.h"
+#import "PCOperatorSet.h"
 
 @interface PCOperatorExtractor()
 
@@ -29,7 +30,7 @@
     unichar character;
     [nextCharacter getCharacters:&character range:NSMakeRange(0, 1)];
     
-    return [[NSCharacterSet symbolCharacterSet] characterIsMember:character];
+    return [[[PCOperatorSet defaultOperatorSet] getAllOperationsSymbols] characterIsMember:character];
 }
 
 -(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer
@@ -39,7 +40,7 @@
     
     
     while ((buffer.currentIndex < buffer.endIndex) &&
-             [[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer peekNextCharacter]]) {
+             [[[PCOperatorSet defaultOperatorSet] getAllOperationsSymbols] characterIsMember:[buffer peekNextCharacter]]) {
         [buffer consumeCharacters:1];
     }
     

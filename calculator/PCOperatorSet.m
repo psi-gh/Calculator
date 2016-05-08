@@ -8,6 +8,7 @@
 
 #import "PCOperatorSet.h"
 #import "PCAddOperatorToken.h"
+#import "PCSubstractOperatorToken.h"
 
 @implementation PCOperatorSet
 
@@ -29,10 +30,10 @@
         self -> _precedenceDictionary = @{};
         
         [self addOperation:[[PCAddOperatorToken alloc] init] precedence:DDPrecedenceAddition];
+        [self addOperation:[[PCSubstractOperatorToken alloc] init] precedence:DDPrecedenceAddition];
     }
     return self;
 }
-
 
 -(void)addOperation:(PCToken*)operandToken precedence:(DDPrecedence)precedence {
     self -> _operators = [self -> _operators arrayByAddingObject:operandToken];
@@ -50,6 +51,16 @@
     }
     
     return DDPrecedenceUnknown;
+}
+
+-(NSCharacterSet *)getAllOperationsSymbols
+{
+    NSString *allSymbolsString = @"";
+    for (PCOperatorToken *operatorToken in self.operators) {
+        allSymbolsString = [allSymbolsString stringByAppendingString:operatorToken.mnemonic];
+    }
+    
+    return [NSCharacterSet characterSetWithCharactersInString:allSymbolsString];
 }
 
 @end

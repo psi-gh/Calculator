@@ -30,6 +30,7 @@
 		A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */; };
 		A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */; };
 		A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */; };
+		A69E97E11CDFCB1800642EFB /* PCSubstractOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCGrouper.m; sourceTree = "<group>"; };
 		A69E97DC1CDF8D5900642EFB /* PCEvaluationTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCEvaluationTreeNode.h; sourceTree = "<group>"; };
 		A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluationTreeNode.m; sourceTree = "<group>"; };
+		A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSubstractOperatorToken.h; sourceTree = "<group>"; };
+		A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSubstractOperatorToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				A69E97D31CDF87E300642EFB /* PCOperatorToken.m */,
 				A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */,
 				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
+				A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */,
+				A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */,
 			);
 			name = Tokenization;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69E97E11CDFCB1800642EFB /* PCSubstractOperatorToken.m in Sources */,
 				A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */,
 				A69E97C81CDF5FD100642EFB /* PCGroupExctractor.m in Sources */,
 				A69E97BE1CDF4E7D00642EFB /* PCAddOperatorToken.m in Sources */,

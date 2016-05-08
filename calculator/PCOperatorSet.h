@@ -44,4 +44,6 @@ typedef NS_ENUM(NSInteger, DDPrecedence) {
 -(void)addOperation:(PCToken*)operandToken precedence:(DDPrecedence)precedence;
 -(DDPrecedence)precedenceForOperation:(PCToken*)operation;
 
+-(NSCharacterSet *)getAllOperationsSymbols;
+
 @end

@@ -10,6 +10,7 @@
 #import "PCParser.h"
 #import "PCNumberToken.h"
 #import "PCAddOperatorToken.h"
+#import "PCSubstractOperatorToken.h"
 #import "PCGroupToken.h"
 #import "PCGrouper.h"
 
@@ -63,8 +64,18 @@
     XCTAssertEqual([result[1] isKindOfClass:[PCAddOperatorToken class]], YES);
 }
 
+- (void)testTokenizeSimpleSubstractOperation {
+    NSString *mathString = @"1-2";
+    
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *result = [parser tokenizeString:mathString];
+    
+    XCTAssertEqual(result.count, 3);
+    XCTAssertEqual([result[1] isKindOfClass:[PCSubstractOperatorToken class]], YES);
+}
+
 - (void)testTokenizeStringWithManyOperationsAndGrouping {
-    NSString *mathString = @"3+(1+2)+4";
+    NSString *mathString = @"3-(1+2)+4";
     
     PCParser *parser = [[PCParser alloc] init];
     NSArray *result = [parser tokenizeString:mathString];
@@ -125,7 +136,19 @@
     PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
     XCTAssertEqual([result isEqualToNumber:@(7)], YES);
-    
 }
+
+- (void)testEvaluateWithTwoDifferentOperations {
+    NSString *mathString = @"3+(2+1)-9";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    NSNumber *result = [rootNode getResult];
+    XCTAssertEqual([result isEqualToNumber:@(-3)], YES);
+}
+
 
 @end
