@@ -28,6 +28,8 @@
 		A69E97CB1CDF7A2300642EFB /* PCRawOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97CA1CDF7A2300642EFB /* PCRawOperatorToken.m */; };
 		A69E97CE1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97CD1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.m */; };
 		A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D01CDF830A00642EFB /* PCOperatorSet.m */; };
+		A69E97D41CDF87E300642EFB /* PCOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D31CDF87E300642EFB /* PCOperatorToken.m */; };
+		A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,10 @@
 		A69E97CD1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCRawPrimitiveValueToken.m; sourceTree = "<group>"; };
 		A69E97CF1CDF830A00642EFB /* PCOperatorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCOperatorSet.h; sourceTree = "<group>"; };
 		A69E97D01CDF830A00642EFB /* PCOperatorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCOperatorSet.m; sourceTree = "<group>"; };
+		A69E97D21CDF87E300642EFB /* PCOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCOperatorToken.h; sourceTree = "<group>"; };
+		A69E97D31CDF87E300642EFB /* PCOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCOperatorToken.m; sourceTree = "<group>"; };
+		A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPrimitiveValueToken.h; sourceTree = "<group>"; };
+		A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPrimitiveValueToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,10 +186,14 @@
 				A69E97D01CDF830A00642EFB /* PCOperatorSet.m */,
 				A69E97A91CDE711300642EFB /* PCToken.h */,
 				A69E97AA1CDE711300642EFB /* PCToken.m */,
+				A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */,
+				A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */,
 				A69E97C31CDF5E5E00642EFB /* PCGroupToken.h */,
 				A69E97C41CDF5E5E00642EFB /* PCGroupToken.m */,
 				A69E97B21CDF351500642EFB /* PCNumberToken.h */,
 				A69E97B31CDF351500642EFB /* PCNumberToken.m */,
+				A69E97D21CDF87E300642EFB /* PCOperatorToken.h */,
+				A69E97D31CDF87E300642EFB /* PCOperatorToken.m */,
 				A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */,
 				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
 				A69E97C91CDF7A2300642EFB /* PCRawOperatorToken.h */,
@@ -336,9 +346,11 @@
 				A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */,
 				A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */,
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
+				A69E97D41CDF87E300642EFB /* PCOperatorToken.m in Sources */,
 				A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */,
 				A69E97AE1CDF34B900642EFB /* PCExtractor.m in Sources */,
 				A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */,
+				A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */,
 				A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */,
 				A69E97CE1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.m in Sources */,
 				A69E97AB1CDE711300642EFB /* PCToken.m in Sources */,

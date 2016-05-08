@@ -10,4 +10,9 @@
 
 @implementation PCNumberToken
 
+-(NSNumber *)getValue
+{
+    return self.value;
+}
+
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Pavel Ivanov. All rights reserved.
 //
 
-#import "PCToken.h"
+#import "PCOperatorToken.h"
 
-@interface PCAddOperatorToken : PCToken
+@interface PCAddOperatorToken : PCOperatorToken
 
 @end

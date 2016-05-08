@@ -7,8 +7,9 @@
 //
 
 #import "PCToken.h"
+#import "PCPrimitiveValueToken.h"
 
-@interface PCGroupToken : PCToken
+@interface PCGroupToken : PCPrimitiveValueToken
 
 @property (nonatomic, strong) NSArray *groupedTokens;
 

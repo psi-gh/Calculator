@@ -14,4 +14,14 @@
     return @"+";
 }
 
+-(NSNumber *)getValueWithInputValues:(NSArray *)values
+{
+    double result = 0;
+    for (NSNumber *number in values) {
+        result += number.doubleValue;
+    }
+    
+    return @(result);
+}
+
 @end

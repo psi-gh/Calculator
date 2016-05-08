@@ -6,10 +6,9 @@
 //  Copyright © 2016 Pavel Ivanov. All rights reserved.
 //
 
-#import "PCToken.h"
+#import "PCPrimitiveValueToken.h"
 
-@interface PCNumberToken : PCToken
+@interface PCNumberToken : PCPrimitiveValueToken
 
-@property (nonatomic, strong) NSNumber *value;
 
 @end

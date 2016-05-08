@@ -37,7 +37,7 @@
     
     XCTAssertEqual(result.count, 1);
     XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
-    XCTAssertEqual(resultToken.value.floatValue, @(33.456).floatValue);
+    XCTAssertEqual([resultToken getValue].floatValue, @(33.456).floatValue);
 }
 
 - (void)testTokenizeGrouping {
