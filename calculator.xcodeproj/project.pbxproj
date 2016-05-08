@@ -184,35 +184,21 @@
 		A69E97A21CDE022D00642EFB /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				A69E97B71CDF358100642EFB /* Parser */,
+				A69E97B71CDF358100642EFB /* Tokenization */,
 				A69E97D81CDF8AE800642EFB /* Grouper */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
 		};
-		A69E97B51CDF351900642EFB /* Tokenization */ = {
+		A69E97B51CDF351900642EFB /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
 				A69E97A91CDE711300642EFB /* PCToken.h */,
 				A69E97AA1CDE711300642EFB /* PCToken.m */,
-				A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */,
-				A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */,
-				A69E97C31CDF5E5E00642EFB /* PCGroupToken.h */,
-				A69E97C41CDF5E5E00642EFB /* PCGroupToken.m */,
-				A69E97B21CDF351500642EFB /* PCNumberToken.h */,
-				A69E97B31CDF351500642EFB /* PCNumberToken.m */,
-				A69E97D21CDF87E300642EFB /* PCOperatorToken.h */,
-				A69E97D31CDF87E300642EFB /* PCOperatorToken.m */,
-				A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */,
-				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
-				A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */,
-				A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */,
-				A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */,
-				A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */,
-				A69E97E71CDFD75A00642EFB /* PCDivisionOperatorToken.h */,
-				A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */,
+				A69E97EA1CDFD94900642EFB /* Primitives */,
+				A69E97EB1CDFD95500642EFB /* Operators */,
 			);
-			name = Tokenization;
+			name = Tokens;
 			sourceTree = "<group>";
 		};
 		A69E97B61CDF352300642EFB /* Extractor */ = {
@@ -230,15 +216,15 @@
 			name = Extractor;
 			sourceTree = "<group>";
 		};
-		A69E97B71CDF358100642EFB /* Parser */ = {
+		A69E97B71CDF358100642EFB /* Tokenization */ = {
 			isa = PBXGroup;
 			children = (
 				A69E97B61CDF352300642EFB /* Extractor */,
-				A69E97B51CDF351900642EFB /* Tokenization */,
+				A69E97B51CDF351900642EFB /* Tokens */,
 				A69E97A31CDE153000642EFB /* PCParser.h */,
 				A69E97A41CDE153000642EFB /* PCParser.m */,
 			);
-			name = Parser;
+			name = Tokenization;
 			sourceTree = "<group>";
 		};
 		A69E97BB1CDF4C2400642EFB /* Tools */ = {
@@ -263,6 +249,36 @@
 				A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */,
 			);
 			name = Grouper;
+			sourceTree = "<group>";
+		};
+		A69E97EA1CDFD94900642EFB /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */,
+				A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */,
+				A69E97C31CDF5E5E00642EFB /* PCGroupToken.h */,
+				A69E97C41CDF5E5E00642EFB /* PCGroupToken.m */,
+				A69E97B21CDF351500642EFB /* PCNumberToken.h */,
+				A69E97B31CDF351500642EFB /* PCNumberToken.m */,
+			);
+			name = Primitives;
+			sourceTree = "<group>";
+		};
+		A69E97EB1CDFD95500642EFB /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97D21CDF87E300642EFB /* PCOperatorToken.h */,
+				A69E97D31CDF87E300642EFB /* PCOperatorToken.m */,
+				A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */,
+				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
+				A69E97DF1CDFCB1800642EFB /* PCSubstractOperatorToken.h */,
+				A69E97E01CDFCB1800642EFB /* PCSubstractOperatorToken.m */,
+				A69E97E21CDFCFE400642EFB /* PCMultiplicationOperationToken.h */,
+				A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */,
+				A69E97E71CDFD75A00642EFB /* PCDivisionOperatorToken.h */,
+				A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */,
+			);
+			name = Operators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

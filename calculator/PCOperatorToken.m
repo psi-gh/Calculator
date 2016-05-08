@@ -10,6 +10,14 @@
 
 @implementation PCOperatorToken
 
+-(PCArity)arity {
+    return PCArityBinary;
+}
+
+-(PCAssociativity)associativity {
+    return PCAssociativityLeft;
+}
+
 -(NSNumber *)getValueWithInputValues:(NSArray *)values
 {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
