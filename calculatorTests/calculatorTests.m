@@ -74,22 +74,6 @@
     XCTAssertEqual(groupToken.groupedTokens.count, 3);
 }
 
-//- (void)testGrouping {
-//    NSString *mathString = @"3+(1+2)+4";
-//    PCParser *parser = [[PCParser alloc] init];
-//    NSArray *tokensArray = [parser tokenizeString:mathString];
-//    
-//    PCGrouper *grouper = [[PCGrouper alloc] init];
-//    PCEvaluationTreeNode *node = [grouper generateEvalueationTreeFromTokensArray:tokensArray];
-//    
-//    XCTAssertEqual([node.token isKindOfClass:[PCAddOperatorToken class]], YES);
-//    
-//    PCEvaluationTreeNode *node1 = node.child[0];
-//    PCEvaluationTreeNode *node2 = node.child[1];
-//    XCTAssertEqual([node1.token isKindOfClass:[PCAddOperatorToken class]], YES);
-//    XCTAssertEqual([node2.token isKindOfClass:[PCNumberToken class]], YES);
-//}
-
 - (void)testGrouping {
     NSString *mathString = @"3+(2+1)+1";
     PCParser *parser = [[PCParser alloc] init];
@@ -109,14 +93,39 @@
     XCTAssertEqual([groupedToken3lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([groupedToken4lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([number2lvl isKindOfClass:[PCNumberToken class]], YES);
+}
 
+- (void)testBuildingEvaluatingTree {
+    NSString *mathString = @"3+(2+1)+1";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
     
-//    XCTAssertEqual([node.token isKindOfClass:[PCAddOperatorToken class]], YES);
-//    
-//    PCEvaluationTreeNode *node1 = node.child[0];
-//    PCEvaluationTreeNode *node2 = node.child[1];
-//    XCTAssertEqual([node1.token isKindOfClass:[PCAddOperatorToken class]], YES);
-//    XCTAssertEqual([node2.token isKindOfClass:[PCNumberToken class]], YES);
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *firstNode2lvl = rootNode.childNodes.firstObject;
+    PCEvaluationTreeNode *secondNode2lvl = rootNode.childNodes.lastObject;
+    
+    XCTAssertEqual(rootNode!=nil, YES);
+    XCTAssertEqual([rootNode.token isKindOfClass:[PCAddOperatorToken class]], YES);
+    XCTAssertEqual(rootNode.childNodes.count == 2, YES);
+    XCTAssertEqual([firstNode2lvl.token isKindOfClass:[PCAddOperatorToken class]], YES);
+    XCTAssertEqual(firstNode2lvl.childNodes.count == 2, YES);
+    XCTAssertEqual([secondNode2lvl.token isKindOfClass:[PCNumberToken class]], YES);
+    XCTAssertEqual(secondNode2lvl.childNodes.count == 0, YES);
+}
+
+- (void)testEvaluate {
+    NSString *mathString = @"3+(2+1)+1";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    NSNumber *result = [rootNode getResult];
+    XCTAssertEqual([result isEqualToNumber:@(7)], YES);
+    
 }
 
 @end
