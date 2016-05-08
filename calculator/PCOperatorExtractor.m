@@ -37,14 +37,15 @@
     NSUInteger startPosition = buffer.currentIndex;
     NSUInteger stopIndex;
     
-    do {
+    
+    while ((buffer.currentIndex < buffer.endIndex) &&
+             [[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer peekNextCharacter]]) {
         [buffer consumeCharacters:1];
-    } while ((buffer.currentIndex < buffer.endIndex) &&
-             [[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer peekNextCharacter]]);
+    }
     
     stopIndex = buffer.currentIndex;
     
-    NSString *result = [buffer.originalString substringWithRange:NSMakeRange(startPosition, stopIndex-startPosition)];
+    NSString *result = [buffer.originalString substringWithRange:NSMakeRange(startPosition, stopIndex-startPosition + 1)];
     
     [buffer resetTo:startPosition + result.length-1];
 

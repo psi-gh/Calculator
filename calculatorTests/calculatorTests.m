@@ -11,6 +11,7 @@
 #import "PCNumberToken.h"
 #import "PCAddOperatorToken.h"
 #import "PCGroupToken.h"
+#import "PCGrouper.h"
 
 @interface calculatorTests : XCTestCase
 
@@ -71,6 +72,51 @@
 
     XCTAssertEqual(result.count, 5);
     XCTAssertEqual(groupToken.groupedTokens.count, 3);
+}
+
+//- (void)testGrouping {
+//    NSString *mathString = @"3+(1+2)+4";
+//    PCParser *parser = [[PCParser alloc] init];
+//    NSArray *tokensArray = [parser tokenizeString:mathString];
+//    
+//    PCGrouper *grouper = [[PCGrouper alloc] init];
+//    PCEvaluationTreeNode *node = [grouper generateEvalueationTreeFromTokensArray:tokensArray];
+//    
+//    XCTAssertEqual([node.token isKindOfClass:[PCAddOperatorToken class]], YES);
+//    
+//    PCEvaluationTreeNode *node1 = node.child[0];
+//    PCEvaluationTreeNode *node2 = node.child[1];
+//    XCTAssertEqual([node1.token isKindOfClass:[PCAddOperatorToken class]], YES);
+//    XCTAssertEqual([node2.token isKindOfClass:[PCNumberToken class]], YES);
+//}
+
+- (void)testGrouping {
+    NSString *mathString = @"3+(2+1)+1";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCGroupToken *groupedToken1lvl = groupingResult.firstObject;
+    PCGroupToken *groupedToken2lvl = groupedToken1lvl.groupedTokens.firstObject;
+    PCNumberToken *number2lvl = groupedToken1lvl.groupedTokens.lastObject;
+    PCGroupToken *groupedToken3lvl = groupedToken2lvl.groupedTokens.lastObject;
+    PCGroupToken *groupedToken4lvl = groupedToken3lvl.groupedTokens.lastObject;
+    
+    XCTAssertEqual(groupingResult.count, 1);
+    XCTAssertEqual([groupedToken1lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken2lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken3lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken4lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([number2lvl isKindOfClass:[PCNumberToken class]], YES);
+
+    
+//    XCTAssertEqual([node.token isKindOfClass:[PCAddOperatorToken class]], YES);
+//    
+//    PCEvaluationTreeNode *node1 = node.child[0];
+//    PCEvaluationTreeNode *node2 = node.child[1];
+//    XCTAssertEqual([node1.token isKindOfClass:[PCAddOperatorToken class]], YES);
+//    XCTAssertEqual([node2.token isKindOfClass:[PCNumberToken class]], YES);
 }
 
 @end

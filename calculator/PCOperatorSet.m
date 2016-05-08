@@ -41,4 +41,15 @@
     self -> _precedenceDictionary = [[NSDictionary alloc] initWithDictionary:mPrecedence];
 }
 
+-(DDPrecedence)precedenceForOperation:(PCToken*)operation
+{
+    for (NSString *operandMnemonic in self.precedenceDictionary) {
+        if ([operandMnemonic isEqualToString:operation.mnemonic]) {
+            return ((NSNumber*)self.precedenceDictionary[operandMnemonic]).integerValue;
+        }
+    }
+    
+    return DDPrecedenceUnknown;
+}
+
 @end

@@ -17,7 +17,9 @@ typedef NS_ENUM(NSUInteger, PCPrecedenceRelated) {
     PCPrecedenceRelatedEqual
 };
 
-typedef NS_ENUM(NSUInteger, DDPrecedence) {
+typedef NS_ENUM(NSInteger, DDPrecedence) {
+    DDPrecedenceUnknown = -1,
+    DDPrecedenceNone = -2,
     DDPrecedenceBitwiseOr = 0,
     DDPrecedenceBitwiseXor,
     DDPrecedenceBitwiseAnd,
@@ -32,9 +34,6 @@ typedef NS_ENUM(NSUInteger, DDPrecedence) {
     DDPrecedenceFactorial,
     DDPrecedencePower,
     DDPrecedenceParentheses,
-    
-    DDPrecedenceUnknown = -1,
-    DDPrecedenceNone = -2
 };
 
 @property (nonatomic, readonly) NSArray      *operators;
@@ -43,5 +42,6 @@ typedef NS_ENUM(NSUInteger, DDPrecedence) {
 + (id)defaultOperatorSet;
 
 -(void)addOperation:(PCToken*)operandToken precedence:(DDPrecedence)precedence;
+-(DDPrecedence)precedenceForOperation:(PCToken*)operation;
 
 @end

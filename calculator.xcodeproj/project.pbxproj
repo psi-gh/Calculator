@@ -30,6 +30,8 @@
 		A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D01CDF830A00642EFB /* PCOperatorSet.m */; };
 		A69E97D41CDF87E300642EFB /* PCOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D31CDF87E300642EFB /* PCOperatorToken.m */; };
 		A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */; };
+		A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */; };
+		A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,10 @@
 		A69E97D31CDF87E300642EFB /* PCOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCOperatorToken.m; sourceTree = "<group>"; };
 		A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPrimitiveValueToken.h; sourceTree = "<group>"; };
 		A69E97D61CDF889400642EFB /* PCPrimitiveValueToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPrimitiveValueToken.m; sourceTree = "<group>"; };
+		A69E97D91CDF8B7A00642EFB /* PCGrouper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCGrouper.h; sourceTree = "<group>"; };
+		A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCGrouper.m; sourceTree = "<group>"; };
+		A69E97DC1CDF8D5900642EFB /* PCEvaluationTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCEvaluationTreeNode.h; sourceTree = "<group>"; };
+		A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluationTreeNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,17 +179,14 @@
 			isa = PBXGroup;
 			children = (
 				A69E97B71CDF358100642EFB /* Parser */,
-				A69E97B51CDF351900642EFB /* Tokenizator */,
-				A69E97B61CDF352300642EFB /* Extractor */,
+				A69E97D81CDF8AE800642EFB /* Grouper */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
 		};
-		A69E97B51CDF351900642EFB /* Tokenizator */ = {
+		A69E97B51CDF351900642EFB /* Tokenization */ = {
 			isa = PBXGroup;
 			children = (
-				A69E97CF1CDF830A00642EFB /* PCOperatorSet.h */,
-				A69E97D01CDF830A00642EFB /* PCOperatorSet.m */,
 				A69E97A91CDE711300642EFB /* PCToken.h */,
 				A69E97AA1CDE711300642EFB /* PCToken.m */,
 				A69E97D51CDF889400642EFB /* PCPrimitiveValueToken.h */,
@@ -201,7 +204,7 @@
 				A69E97CC1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.h */,
 				A69E97CD1CDF7A5C00642EFB /* PCRawPrimitiveValueToken.m */,
 			);
-			name = Tokenizator;
+			name = Tokenization;
 			sourceTree = "<group>";
 		};
 		A69E97B61CDF352300642EFB /* Extractor */ = {
@@ -222,10 +225,10 @@
 		A69E97B71CDF358100642EFB /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				A69E97B61CDF352300642EFB /* Extractor */,
+				A69E97B51CDF351900642EFB /* Tokenization */,
 				A69E97A31CDE153000642EFB /* PCParser.h */,
 				A69E97A41CDE153000642EFB /* PCParser.m */,
-				A69E97A61CDE6CAD00642EFB /* PCTokenCharacterBuffer.h */,
-				A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -235,8 +238,23 @@
 			children = (
 				A69E97B81CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.h */,
 				A69E97B91CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m */,
+				A69E97A61CDE6CAD00642EFB /* PCTokenCharacterBuffer.h */,
+				A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */,
+				A69E97CF1CDF830A00642EFB /* PCOperatorSet.h */,
+				A69E97D01CDF830A00642EFB /* PCOperatorSet.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		A69E97D81CDF8AE800642EFB /* Grouper */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97D91CDF8B7A00642EFB /* PCGrouper.h */,
+				A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */,
+				A69E97DC1CDF8D5900642EFB /* PCEvaluationTreeNode.h */,
+				A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */,
+			);
+			name = Grouper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,9 +364,11 @@
 				A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */,
 				A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */,
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
+				A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */,
 				A69E97D41CDF87E300642EFB /* PCOperatorToken.m in Sources */,
 				A69E97D11CDF830A00642EFB /* PCOperatorSet.m in Sources */,
 				A69E97AE1CDF34B900642EFB /* PCExtractor.m in Sources */,
+				A69E97DB1CDF8B7A00642EFB /* PCGrouper.m in Sources */,
 				A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */,
 				A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */,
 				A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */,
