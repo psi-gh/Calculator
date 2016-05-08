@@ -14,6 +14,9 @@
 		A69E97891CDDFCCA00642EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69E97881CDDFCCA00642EFB /* Assets.xcassets */; };
 		A69E978C1CDDFCCA00642EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */; };
 		A69E97971CDDFCCA00642EFB /* calculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97961CDDFCCA00642EFB /* calculatorTests.m */; };
+		A69E97A51CDE153000642EFB /* PCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97A41CDE153000642EFB /* PCParser.m */; };
+		A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */; };
+		A69E97AB1CDE711300642EFB /* PCToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97AA1CDE711300642EFB /* PCToken.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		A69E97921CDDFCCA00642EFB /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69E97961CDDFCCA00642EFB /* calculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calculatorTests.m; sourceTree = "<group>"; };
 		A69E97981CDDFCCA00642EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A69E97A31CDE153000642EFB /* PCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCParser.h; sourceTree = "<group>"; };
+		A69E97A41CDE153000642EFB /* PCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCParser.m; sourceTree = "<group>"; };
+		A69E97A61CDE6CAD00642EFB /* PCTokenCharacterBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTokenCharacterBuffer.h; sourceTree = "<group>"; };
+		A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTokenCharacterBuffer.m; sourceTree = "<group>"; };
+		A69E97A91CDE711300642EFB /* PCToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCToken.h; sourceTree = "<group>"; };
+		A69E97AA1CDE711300642EFB /* PCToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCToken.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +90,11 @@
 		A69E977B1CDDFCCA00642EFB /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				A69E97A21CDE022D00642EFB /* Logic */,
+				A69E97A11CDE022600642EFB /* UI */,
+				A69E97851CDDFCCA00642EFB /* Main.storyboard */,
 				A69E977F1CDDFCCA00642EFB /* AppDelegate.h */,
 				A69E97801CDDFCCA00642EFB /* AppDelegate.m */,
-				A69E97821CDDFCCA00642EFB /* ViewController.h */,
-				A69E97831CDDFCCA00642EFB /* ViewController.m */,
-				A69E97851CDDFCCA00642EFB /* Main.storyboard */,
 				A69E97881CDDFCCA00642EFB /* Assets.xcassets */,
 				A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */,
 				A69E978D1CDDFCCA00642EFB /* Info.plist */,
@@ -109,6 +118,28 @@
 				A69E97981CDDFCCA00642EFB /* Info.plist */,
 			);
 			path = calculatorTests;
+			sourceTree = "<group>";
+		};
+		A69E97A11CDE022600642EFB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97821CDDFCCA00642EFB /* ViewController.h */,
+				A69E97831CDDFCCA00642EFB /* ViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A69E97A21CDE022D00642EFB /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97A31CDE153000642EFB /* PCParser.h */,
+				A69E97A41CDE153000642EFB /* PCParser.m */,
+				A69E97A61CDE6CAD00642EFB /* PCTokenCharacterBuffer.h */,
+				A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */,
+				A69E97A91CDE711300642EFB /* PCToken.h */,
+				A69E97AA1CDE711300642EFB /* PCToken.m */,
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +186,7 @@
 		A69E97711CDDFCCA00642EFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PC;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Pavel Ivanov";
 				TargetAttributes = {
@@ -212,7 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */,
+				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
 				A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */,
+				A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */,
+				A69E97AB1CDE711300642EFB /* PCToken.m in Sources */,
 				A69E977E1CDDFCCA00642EFB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

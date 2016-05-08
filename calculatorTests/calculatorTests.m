@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PCParser.h"
 
 @interface calculatorTests : XCTestCase
 
@@ -24,10 +25,24 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testMakeParenthesesFormFromString {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSString *mathString = @"3+2*6";
+    PCParser *parser = [[PCParser alloc] init];
+    NSString *result = [parser createForceParenthesesFormFromEvaluationString:mathString];
+    XCTAssertEqual(result, @"(3+(2*6))");
 }
+
+
+//- (void)testExample {
+//    // This is an example of a functional test case.
+//    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    NSString *mathString = @"(3+2.9)*6";
+//    PCParser *parser = [[PCParser alloc] init];
+//    PCToken *token = [parser parse:mathString];
+//    XCTAssertEqual([token getValue], 54);
+//}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
