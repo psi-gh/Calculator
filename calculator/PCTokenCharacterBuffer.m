@@ -28,6 +28,10 @@
         @throw @"Can't peek backward";
     }
     
+    if (self.currentIndex+1 > self.originalString.length-1) {
+        @throw @"outer of bounds";
+    }
+    
     NSRange range;
     range.location = self.currentIndex;
     range.length = delta;
@@ -36,6 +40,10 @@
 
 -(unichar)peekNextCharacter
 {
+    if (self.currentIndex+1 > self.originalString.length-1) {
+        @throw @"outer of bounds";
+    }
+    
     return [self.originalString characterAtIndex:self.currentIndex+1];
 }
 
@@ -55,6 +63,11 @@
 -(void)resetTo:(NSUInteger)index
 {
     self.currentIndex = index;
+}
+
+-(NSUInteger)endIndex
+{
+    return self.originalString.length-1;
 }
 
 @end

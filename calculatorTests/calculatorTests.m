@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "PCParser.h"
 #import "PCNumberToken.h"
+#import "PCAddOperatorToken.h"
 
 @interface calculatorTests : XCTestCase
 
@@ -36,6 +37,16 @@
     XCTAssertEqual(result.count, 1);
     XCTAssertEqual([result.firstObject isKindOfClass:[PCNumberToken class]], YES);
     XCTAssertEqual(resultToken.value.floatValue, @(33.456).floatValue);
+}
+
+- (void)testTokenizeSimpleAddOperation {
+    NSString *mathString = @"1+2";
+    
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *result = [parser tokenizeString:mathString];
+    
+    XCTAssertEqual(result.count, 3);
+    XCTAssertEqual([result[1] isKindOfClass:[PCAddOperatorToken class]], YES);
 }
 
 //- (void)testTokenizeSingleFloatNumber {

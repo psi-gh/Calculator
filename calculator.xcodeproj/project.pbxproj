@@ -21,6 +21,8 @@
 		A69E97B11CDF34C900642EFB /* PCNumberExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97B01CDF34C900642EFB /* PCNumberExtractor.m */; };
 		A69E97B41CDF351500642EFB /* PCNumberToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97B31CDF351500642EFB /* PCNumberToken.m */; };
 		A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97B91CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m */; };
+		A69E97BE1CDF4E7D00642EFB /* PCAddOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */; };
+		A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97C01CDF4ED100642EFB /* PCOperatorExtractor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		A69E97B31CDF351500642EFB /* PCNumberToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNumberToken.m; sourceTree = "<group>"; };
 		A69E97B81CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCharacterSet+PCCharacterSet.h"; sourceTree = "<group>"; };
 		A69E97B91CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCharacterSet+PCCharacterSet.m"; sourceTree = "<group>"; };
+		A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAddOperatorToken.h; sourceTree = "<group>"; };
+		A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAddOperatorToken.m; sourceTree = "<group>"; };
+		A69E97BF1CDF4ED100642EFB /* PCOperatorExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCOperatorExtractor.h; sourceTree = "<group>"; };
+		A69E97C01CDF4ED100642EFB /* PCOperatorExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCOperatorExtractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,8 @@
 				A69E97AA1CDE711300642EFB /* PCToken.m */,
 				A69E97B21CDF351500642EFB /* PCNumberToken.h */,
 				A69E97B31CDF351500642EFB /* PCNumberToken.m */,
+				A69E97BC1CDF4E7D00642EFB /* PCAddOperatorToken.h */,
+				A69E97BD1CDF4E7D00642EFB /* PCAddOperatorToken.m */,
 			);
 			name = Tokenizator;
 			sourceTree = "<group>";
@@ -170,6 +178,8 @@
 				A69E97AD1CDF34B900642EFB /* PCExtractor.m */,
 				A69E97AF1CDF34C900642EFB /* PCNumberExtractor.h */,
 				A69E97B01CDF34C900642EFB /* PCNumberExtractor.m */,
+				A69E97BF1CDF4ED100642EFB /* PCOperatorExtractor.h */,
+				A69E97C01CDF4ED100642EFB /* PCOperatorExtractor.m */,
 			);
 			name = Extractor;
 			sourceTree = "<group>";
@@ -296,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */,
+				A69E97BE1CDF4E7D00642EFB /* PCAddOperatorToken.m in Sources */,
 				A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */,
+				A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */,
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
 				A69E97AE1CDF34B900642EFB /* PCExtractor.m in Sources */,
 				A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */,

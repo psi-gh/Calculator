@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSArray *childs;
 @property (nonatomic, strong) NSString *kind;
+@property (nonatomic, strong) NSString *mnemonic;
 
 @end

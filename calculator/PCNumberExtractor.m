@@ -14,9 +14,9 @@
 
 -(BOOL)matchesPreconditionsInBuffer:(PCTokenCharacterBuffer*)buffer
 {
-    NSString *nextCharacter = [buffer peekNextCharacters:1];
-    unichar character;
-    [nextCharacter getCharacters:&character range:NSMakeRange(0, 1)];
+//    NSString *nextCharacter = [buffer getCurrentCharacter];
+    unichar character = [buffer getCurrentCharacter];
+//    [nextCharacter getCharacters:&character range:NSMakeRange(0, 1)];
     
     return [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:character];
 }
@@ -40,6 +40,7 @@
     
     PCNumberToken *result = [[PCNumberToken alloc] init];
     result.value = resultNumber;
+    result.mnemonic = foundString;
     return result;
 }
 

@@ -14,10 +14,14 @@
 @property (nonatomic, strong, readonly) NSString *originalString;
 
 +(instancetype)initWithString:(NSString*)string;
+
 -(NSString*)peekNextCharacters:(NSInteger)delta;
 -(unichar)peekNextCharacter;
 -(unichar)getCurrentCharacter;
+
 -(void)consumeCharacters:(NSInteger)delta;
 -(void)resetTo:(NSUInteger)index;
+
+-(NSUInteger)endIndex;
 
 @end

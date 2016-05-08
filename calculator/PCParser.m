@@ -8,8 +8,14 @@
 
 #import "PCParser.h"
 #import "PCToken.h"
+
 #import "PCNumberExtractor.h"
+#import "PCOperatorExtractor.h"
+
+#import "PCAddOperatorToken.h"
+
 #import "PCTokenCharacterBuffer.h"
+
 
 @interface PCParser()
 
@@ -25,37 +31,12 @@
 {
     self = [super init];
     if (self) {
-        self.operators = @[@"*", @"/", @"+", @"-"];
-        self.allowedOperandSymbols = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @".", @"(", @")"];
-        self.extractors = @[[[PCNumberExtractor alloc] init]];
+        self.operators = @[[[PCAddOperatorToken alloc] init]];
+        self.extractors = @[[[PCNumberExtractor alloc] init],
+                            [PCOperatorExtractor initWithOperators:self.operators]];
     }
     
     return self;
-}
-
--(NSString*)createForceParenthesesFormFromEvaluationString:(NSString*)mathString
-{
-	mathString = @"3+5*6";
-    
-    NSRange range;
-    range.location = 0;
-    range.length = mathString.length;
-    for (NSString *operator in self.operators) {
-        NSRange foundOperatorRange = [mathString rangeOfString:operator
-                                                       options:NSCaseInsensitiveSearch
-                                                         range:range];
-    
-//        if ([mathString substringWithRange:<#(NSRange)#>])
-        // go left
-        NSUInteger i = foundOperatorRange.location;
-//        NSRange *leftSearch = foundOperatorRange;
-//        leftSearch.location = i;
-//        while ([mathString substringWithRange:foundOperatorRange]) {
-//            <#statements#>
-//        }
-    }
-    
-    return mathString;
 }
 
 -(NSArray*)tokenizeString:(NSString*)mathString
@@ -64,10 +45,10 @@
     
     NSMutableArray *resultTokens = @[].mutableCopy;
     
-    for (; buffer.currentIndex < buffer.originalString.length;) {
-        while ([[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer getCurrentCharacter]]) {
-            [buffer consumeCharacters:1];
-        }
+    for (; buffer.currentIndex <= buffer.endIndex;) {
+//        while ([[NSCharacterSet symbolCharacterSet] characterIsMember:[buffer getCurrentCharacter]]) {
+//            [buffer consumeCharacters:1];
+//        }
         
         for (PCExtractor *extractor in self.extractors) {
             NSUInteger startIndex = buffer.currentIndex;
