@@ -34,6 +34,7 @@
 		A69E97E41CDFCFE400642EFB /* PCMultiplicationOperationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E31CDFCFE400642EFB /* PCMultiplicationOperationToken.m */; };
 		A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */; };
 		A69E97E91CDFD75A00642EFB /* PCDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */; };
+		A69E97EE1CE094CC00642EFB /* NSError+PCError.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97ED1CE094CC00642EFB /* NSError+PCError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTokenizationTests.m; sourceTree = "<group>"; };
 		A69E97E71CDFD75A00642EFB /* PCDivisionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCDivisionOperatorToken.h; sourceTree = "<group>"; };
 		A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDivisionOperatorToken.m; sourceTree = "<group>"; };
+		A69E97EC1CE094CC00642EFB /* NSError+PCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+PCError.h"; sourceTree = "<group>"; };
+		A69E97ED1CE094CC00642EFB /* NSError+PCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+PCError.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */,
 				A69E978D1CDDFCCA00642EFB /* Info.plist */,
 				A69E977C1CDDFCCA00642EFB /* Supporting Files */,
+				A69E97EC1CE094CC00642EFB /* NSError+PCError.h */,
+				A69E97ED1CE094CC00642EFB /* NSError+PCError.m */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */,
 				A69E97C81CDF5FD100642EFB /* PCGroupExctractor.m in Sources */,
 				A69E97BE1CDF4E7D00642EFB /* PCAddOperatorToken.m in Sources */,
+				A69E97EE1CE094CC00642EFB /* NSError+PCError.m in Sources */,
 				A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */,
 				A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */,
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,

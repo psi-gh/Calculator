@@ -11,6 +11,6 @@
 
 @interface PCParser : NSObject
 
--(NSArray*)tokenizeString:(NSString*)mathString;
+-(NSArray*)tokenizeString:(NSString*)mathString error:(NSError**)error;
 
 @end

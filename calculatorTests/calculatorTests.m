@@ -17,13 +17,15 @@
 
 @interface calculatorTests : XCTestCase
 
+@property(nonatomic, strong) PCParser *parser;
+
 @end
 
 @implementation calculatorTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.parser = [[PCParser alloc] init];
 }
 
 - (void)tearDown {
@@ -33,8 +35,8 @@
 
 - (void)testGrouping {
     NSString *mathString = @"3+(2+1)+1";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -44,6 +46,7 @@
     PCGroupToken *groupedToken3lvl = groupedToken2lvl.groupedTokens.lastObject;
     PCGroupToken *groupedToken4lvl = groupedToken3lvl.groupedTokens.lastObject;
     
+    XCTAssertNotNil(tokensArray);
     XCTAssertEqual(groupingResult.count, 1);
     XCTAssertEqual([groupedToken1lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([groupedToken2lvl isKindOfClass:[PCGroupToken class]], YES);
@@ -54,8 +57,8 @@
 
 - (void)testGroupingWithDifferentPrecedence {
     NSString *mathString = @"1+2*3+4";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -72,8 +75,8 @@
 
 - (void)testBuildingEvaluatingTree {
     NSString *mathString = @"3+(2+1)+1";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -92,8 +95,8 @@
 
 - (void)testEvaluate {
     NSString *mathString = @"3+(2+1)+1";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -104,8 +107,8 @@
 
 - (void)testEvaluateDivision {
     NSString *mathString = @"16/2";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -116,8 +119,8 @@
 
 - (void)testEvaluateOperationsWithEqualPrecedence {
     NSString *mathString = @"3+(2+1)-9";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -128,8 +131,8 @@
 
 - (void)testEvaluateOperationsWithDifferentPrecedence {
     NSString *mathString = @"1+2*(3+4)";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
@@ -140,8 +143,8 @@
 
 - (void)testEvaluateWithTrash {
     NSString *mathString = @"1+2abc";
-    PCParser *parser = [[PCParser alloc] init];
-    NSArray *tokensArray = [parser tokenizeString:mathString];
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
     
     XCTAssertEqual(tokensArray == nil, YES);
 }

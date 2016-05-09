@@ -18,7 +18,7 @@
     return [[NSCharacterSet openGroupingSet] characterIsMember:character];
 }
 
--(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer
+-(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer error:(NSError *__autoreleasing *)error
 {
     NSUInteger startPosition = buffer.currentIndex;
     NSUInteger stopIndex;
@@ -33,7 +33,11 @@
     } while (buffer.currentIndex < buffer.endIndex);
     
     if (!closeBracketFound) {
-        @throw @"close bracket is missing!";
+        if (error != NULL) {
+            *error = [NSError buildErrorWithDescription:@"Closing parenthesis is missing!" code:0];
+        }
+        
+        return nil;
     }
     
     stopIndex = buffer.currentIndex;

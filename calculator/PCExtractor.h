@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "PCToken.h"
 #import "PCTokenCharacterBuffer.h"
+#import "NSError+PCError.h"
 
 @interface PCExtractor : NSObject
 
--(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer;
+-(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer error:(NSError**)error;
 -(BOOL)matchesPreconditionsInBuffer:(PCTokenCharacterBuffer*)buffer;
 
 @end

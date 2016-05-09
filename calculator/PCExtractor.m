@@ -10,7 +10,7 @@
 
 @implementation PCExtractor
 
--(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer
+-(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer error:(NSError**)error;
 {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]

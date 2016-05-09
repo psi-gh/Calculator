@@ -26,14 +26,11 @@
 
 -(BOOL)matchesPreconditionsInBuffer:(PCTokenCharacterBuffer*)buffer
 {
-    NSString *nextCharacter = [buffer peekNextCharacters:1];
-    unichar character;
-    [nextCharacter getCharacters:&character range:NSMakeRange(0, 1)];
-    
+    unichar character = [buffer getCurrentCharacter];
     return [[[PCOperatorSet defaultOperatorSet] getAllOperationsSymbols] characterIsMember:character];
 }
 
--(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer
+-(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer error:(NSError *__autoreleasing *)error
 {
     NSUInteger startPosition = buffer.currentIndex;
     NSUInteger stopIndex;
@@ -43,6 +40,8 @@
              [[[PCOperatorSet defaultOperatorSet] getAllOperationsSymbols] characterIsMember:[buffer peekNextCharacter]]) {
         [buffer consumeCharacters:1];
     }
+    
+    
     
     stopIndex = buffer.currentIndex;
     
@@ -57,7 +56,10 @@
         }
     }
     
-    @throw @"Can't identify operator!";
+    if (error != NULL) {
+        *error = [NSError buildErrorWithDescription:@"Invalid operator" code:0];
+    }
+    
     return nil;
 }
 

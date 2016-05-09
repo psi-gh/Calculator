@@ -18,7 +18,7 @@
     return [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:character];
 }
 
--(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer
+-(PCToken*)extractFromBuffer:(PCTokenCharacterBuffer*)buffer error:(NSError *__autoreleasing *)error
 {
     NSString *string;
     string = [buffer.originalString substringWithRange:NSMakeRange(buffer.currentIndex, buffer.originalString.length - buffer.currentIndex)];
@@ -32,7 +32,11 @@
     NSNumber *resultNumber = [formatter numberFromString:foundString];
     
     if (resultNumber == nil) {
-        @throw @"Error in number format";
+        if (error != NULL) {
+            *error = [NSError buildErrorWithDescription:@"Invalid number" code:0];
+        }
+        
+        return nil;
     }
     
     PCNumberToken *result = [[PCNumberToken alloc] init];

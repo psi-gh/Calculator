@@ -13,7 +13,7 @@
 #import "PCNumberExtractor.h"
 #import "PCOperatorExtractor.h"
 #import "PCGroupExctractor.h"
-
+#import "NSError+PCError.h"
 #import "PCTokenCharacterBuffer.h"
 
 
@@ -42,7 +42,7 @@
     return self;
 }
 
--(NSArray*)tokenizeString:(NSString*)mathString
+-(NSArray*)tokenizeString:(NSString*)mathString error:(NSError**)error
 {
     PCTokenCharacterBuffer *buffer = [PCTokenCharacterBuffer initWithString:mathString];
     NSMutableArray *resultTokens = @[].mutableCopy;
@@ -52,22 +52,30 @@
         for (PCExtractor *extractor in self.extractors) {
             NSUInteger startIndex = buffer.currentIndex;
             
-            // TODO: Error when can't parse
             if ([extractor matchesPreconditionsInBuffer:buffer]) {
                 [buffer resetTo:startIndex];
-                token = [extractor extractFromBuffer:buffer];
+                NSError *exctractingError;
+                token = [extractor extractFromBuffer:buffer error:&exctractingError];
+                if (!token) {
+                    *error = exctractingError;
+                    return nil;
+                }
+                
                 break;
             }
         }
         
         if (!token) {
-            NSLog(@"error");
+            if (error != NULL) {
+                *error = [NSError buildErrorWithDescription:@"Invalid input" code:0];
+            }
+            
             return nil;
         }
     
         if ([token isKindOfClass:[PCGroupToken class]]) {
             PCGroupToken *groupToken = (PCGroupToken*)token;
-            NSArray *groupedTokens = [self tokenizeString:groupToken.mnemonic];
+            NSArray *groupedTokens = [self tokenizeString:groupToken.mnemonic error:error];
             groupToken.groupedTokens = groupedTokens;
         }
         
