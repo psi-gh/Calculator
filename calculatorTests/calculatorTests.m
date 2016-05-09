@@ -138,4 +138,13 @@
     XCTAssertEqual([result isEqualToNumber:@(1+2*(3+4))], YES);
 }
 
+- (void)testEvaluateWithTrash {
+    NSString *mathString = @"1+2abc";
+    PCParser *parser = [[PCParser alloc] init];
+    NSArray *tokensArray = [parser tokenizeString:mathString];
+    
+    XCTAssertEqual(tokensArray == nil, YES);
+}
+
+
 @end

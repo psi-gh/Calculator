@@ -45,40 +45,37 @@
 -(NSArray*)tokenizeString:(NSString*)mathString
 {
     PCTokenCharacterBuffer *buffer = [PCTokenCharacterBuffer initWithString:mathString];
-    
     NSMutableArray *resultTokens = @[].mutableCopy;
     
-    for (;buffer.currentIndex <= buffer.endIndex;) {
+    for ( ; buffer.currentIndex <= buffer.endIndex ; ) {
+        PCToken *token = nil;
         for (PCExtractor *extractor in self.extractors) {
             NSUInteger startIndex = buffer.currentIndex;
+            
+            // TODO: Error when can't parse
             if ([extractor matchesPreconditionsInBuffer:buffer]) {
                 [buffer resetTo:startIndex];
-                PCToken *token = [extractor extractFromBuffer:buffer];
-                [resultTokens addObject:token];
-                
-                if ([token isKindOfClass:[PCGroupToken class]]) {
-                    PCGroupToken *groupToken = (PCGroupToken*)token;
-                    NSArray *groupedTokens = [self tokenizeString:groupToken.mnemonic];
-                    groupToken.groupedTokens = groupedTokens;
-                }
-                
-                if (buffer.currentIndex >= buffer.endIndex) {
-                    return resultTokens;
-                } else {
-                    [buffer consumeCharacters:1];
-                }
-                
+                token = [extractor extractFromBuffer:buffer];
                 break;
             }
         }
+        
+        if (!token) {
+            NSLog(@"error");
+            return nil;
+        }
+    
+        if ([token isKindOfClass:[PCGroupToken class]]) {
+            PCGroupToken *groupToken = (PCGroupToken*)token;
+            NSArray *groupedTokens = [self tokenizeString:groupToken.mnemonic];
+            groupToken.groupedTokens = groupedTokens;
+        }
+        
+        [resultTokens addObject:token];
+        [buffer consumeCharacters:1];
     }
     
     return resultTokens;
-}
-
--(void)parseForceParenthesesFormEvaluation:(NSString*)mathString
-{
-	
 }
 
 @end

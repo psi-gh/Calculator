@@ -11,6 +11,6 @@
 
 @interface PCParser : NSObject
 
--(void)parseForceParenthesesFormEvaluation:(NSString*)mathString;
 -(NSArray*)tokenizeString:(NSString*)mathString;
+
 @end
