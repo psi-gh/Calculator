@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A69E977E1CDDFCCA00642EFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E977D1CDDFCCA00642EFB /* main.m */; };
 		A69E97811CDDFCCA00642EFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97801CDDFCCA00642EFB /* AppDelegate.m */; };
-		A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97831CDDFCCA00642EFB /* ViewController.m */; };
 		A69E97871CDDFCCA00642EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69E97851CDDFCCA00642EFB /* Main.storyboard */; };
 		A69E97891CDDFCCA00642EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69E97881CDDFCCA00642EFB /* Assets.xcassets */; };
 		A69E978C1CDDFCCA00642EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */; };
@@ -38,6 +37,9 @@
 		A69E97F21CE097D700642EFB /* PCBuildingEvaluationTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */; };
 		A69E97F41CE097E300642EFB /* PCEvaluatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */; };
 		A69E97F81CE098DC00642EFB /* PCEvaluatingTreeBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */; };
+		A69E97FB1CE09A3900642EFB /* PCCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97FA1CE09A3900642EFB /* PCCalculator.m */; };
+		A69E97FD1CE09B6900642EFB /* PCCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97FC1CE09B6900642EFB /* PCCalculatorTests.m */; };
+		A69E98001CE09C3400642EFB /* PCMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97FF1CE09C3400642EFB /* PCMainScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +57,6 @@
 		A69E977D1CDDFCCA00642EFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A69E977F1CDDFCCA00642EFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A69E97801CDDFCCA00642EFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A69E97821CDDFCCA00642EFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A69E97831CDDFCCA00642EFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A69E97861CDDFCCA00642EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A69E97881CDDFCCA00642EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A69E978B1CDDFCCA00642EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +109,11 @@
 		A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluatingTests.m; sourceTree = "<group>"; };
 		A69E97F61CE098DC00642EFB /* PCEvaluatingTreeBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCEvaluatingTreeBuilder.h; sourceTree = "<group>"; };
 		A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluatingTreeBuilder.m; sourceTree = "<group>"; };
+		A69E97F91CE09A3900642EFB /* PCCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCalculator.h; sourceTree = "<group>"; };
+		A69E97FA1CE09A3900642EFB /* PCCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCalculator.m; sourceTree = "<group>"; };
+		A69E97FC1CE09B6900642EFB /* PCCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCalculatorTests.m; sourceTree = "<group>"; };
+		A69E97FE1CE09C3400642EFB /* PCMainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCMainScreenViewController.h; sourceTree = "<group>"; };
+		A69E97FF1CE09C3400642EFB /* PCMainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCMainScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				A69E97EF1CE0976800642EFB /* PCGroupingTests.m */,
 				A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */,
 				A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */,
+				A69E97FC1CE09B6900642EFB /* PCCalculatorTests.m */,
 			);
 			path = calculatorTests;
 			sourceTree = "<group>";
@@ -189,8 +195,8 @@
 		A69E97A11CDE022600642EFB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A69E97821CDDFCCA00642EFB /* ViewController.h */,
-				A69E97831CDDFCCA00642EFB /* ViewController.m */,
+				A69E97FE1CE09C3400642EFB /* PCMainScreenViewController.h */,
+				A69E97FF1CE09C3400642EFB /* PCMainScreenViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 				A69E97B71CDF358100642EFB /* Tokenization */,
 				A69E97D81CDF8AE800642EFB /* Grouper */,
 				A69E97F51CE0989800642EFB /* Evaluating Tree Builder */,
+				A69E97F91CE09A3900642EFB /* PCCalculator.h */,
+				A69E97FA1CE09A3900642EFB /* PCCalculator.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -407,11 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69E97E11CDFCB1800642EFB /* PCSubstractOperatorToken.m in Sources */,
-				A69E97841CDDFCCA00642EFB /* ViewController.m in Sources */,
 				A69E97C81CDF5FD100642EFB /* PCGroupExctractor.m in Sources */,
 				A69E97BE1CDF4E7D00642EFB /* PCAddOperatorToken.m in Sources */,
 				A69E97EE1CE094CC00642EFB /* NSError+PCError.m in Sources */,
 				A69E97BA1CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m in Sources */,
+				A69E97FB1CE09A3900642EFB /* PCCalculator.m in Sources */,
 				A69E97C11CDF4ED100642EFB /* PCOperatorExtractor.m in Sources */,
 				A69E97A51CDE153000642EFB /* PCParser.m in Sources */,
 				A69E97DE1CDF8D5900642EFB /* PCEvaluationTreeNode.m in Sources */,
@@ -425,6 +433,7 @@
 				A69E97D71CDF889400642EFB /* PCPrimitiveValueToken.m in Sources */,
 				A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */,
 				A69E97AB1CDE711300642EFB /* PCToken.m in Sources */,
+				A69E98001CE09C3400642EFB /* PCMainScreenViewController.m in Sources */,
 				A69E97B11CDF34C900642EFB /* PCNumberExtractor.m in Sources */,
 				A69E97C51CDF5E5E00642EFB /* PCGroupToken.m in Sources */,
 				A69E977E1CDDFCCA00642EFB /* main.m in Sources */,
@@ -439,6 +448,7 @@
 			files = (
 				A69E97F41CE097E300642EFB /* PCEvaluatingTests.m in Sources */,
 				A69E97F01CE0976800642EFB /* PCGroupingTests.m in Sources */,
+				A69E97FD1CE09B6900642EFB /* PCCalculatorTests.m in Sources */,
 				A69E97F21CE097D700642EFB /* PCBuildingEvaluationTreeTests.m in Sources */,
 				A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */,
 			);
