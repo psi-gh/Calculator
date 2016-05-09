@@ -13,7 +13,6 @@
 @interface PCEvaluationTreeNode : NSObject
 
 @property (nonatomic, strong) PCToken *token;
-@property (nonatomic, strong) id parent;
 @property (nonatomic, strong) NSMutableArray *childNodes;
 
 -(id)getResult;

@@ -35,13 +35,10 @@
     NSUInteger startPosition = buffer.currentIndex;
     NSUInteger stopIndex;
     
-    
     while ((buffer.currentIndex < buffer.endIndex) &&
              [[[PCOperatorSet defaultOperatorSet] getAllOperationsSymbols] characterIsMember:[buffer peekNextCharacter]]) {
         [buffer consumeCharacters:1];
     }
-    
-    
     
     stopIndex = buffer.currentIndex;
     
