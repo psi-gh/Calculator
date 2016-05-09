@@ -45,5 +45,5 @@ typedef NS_ENUM(NSInteger, DDPrecedence) {
 -(DDPrecedence)precedenceForOperation:(PCToken*)operation;
 
 -(NSCharacterSet *)getAllOperationsSymbols;
-
+-(NSArray *)getAllUnaryOperationMnemonics;
 @end

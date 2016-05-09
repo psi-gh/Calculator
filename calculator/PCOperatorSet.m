@@ -68,4 +68,16 @@
     return [NSCharacterSet characterSetWithCharactersInString:allSymbolsString];
 }
 
+-(NSArray *)getAllUnaryOperationMnemonics
+{
+    NSMutableArray *result = @[].mutableCopy;
+    for (PCOperatorToken *operatorToken in self.operators) {
+        if (operatorToken.arity == PCArityUnary) {
+            [result addObject:operatorToken.mnemonic];
+        }
+    }
+    
+    return result;
+}
+
 @end
