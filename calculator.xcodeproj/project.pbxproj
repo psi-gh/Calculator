@@ -13,7 +13,6 @@
 		A69E97871CDDFCCA00642EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69E97851CDDFCCA00642EFB /* Main.storyboard */; };
 		A69E97891CDDFCCA00642EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69E97881CDDFCCA00642EFB /* Assets.xcassets */; };
 		A69E978C1CDDFCCA00642EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */; };
-		A69E97971CDDFCCA00642EFB /* calculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97961CDDFCCA00642EFB /* calculatorTests.m */; };
 		A69E97A51CDE153000642EFB /* PCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97A41CDE153000642EFB /* PCParser.m */; };
 		A69E97A81CDE6CAD00642EFB /* PCTokenCharacterBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97A71CDE6CAD00642EFB /* PCTokenCharacterBuffer.m */; };
 		A69E97AB1CDE711300642EFB /* PCToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97AA1CDE711300642EFB /* PCToken.m */; };
@@ -35,6 +34,9 @@
 		A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */; };
 		A69E97E91CDFD75A00642EFB /* PCDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */; };
 		A69E97EE1CE094CC00642EFB /* NSError+PCError.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97ED1CE094CC00642EFB /* NSError+PCError.m */; };
+		A69E97F01CE0976800642EFB /* PCGroupingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97EF1CE0976800642EFB /* PCGroupingTests.m */; };
+		A69E97F21CE097D700642EFB /* PCBuildingEvaluationTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */; };
+		A69E97F41CE097E300642EFB /* PCEvaluatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 		A69E978B1CDDFCCA00642EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A69E978D1CDDFCCA00642EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A69E97921CDDFCCA00642EFB /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A69E97961CDDFCCA00642EFB /* calculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = calculatorTests.m; sourceTree = "<group>"; };
 		A69E97981CDDFCCA00642EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A69E97A31CDE153000642EFB /* PCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCParser.h; sourceTree = "<group>"; };
 		A69E97A41CDE153000642EFB /* PCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCParser.m; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDivisionOperatorToken.m; sourceTree = "<group>"; };
 		A69E97EC1CE094CC00642EFB /* NSError+PCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+PCError.h"; sourceTree = "<group>"; };
 		A69E97ED1CE094CC00642EFB /* NSError+PCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+PCError.m"; sourceTree = "<group>"; };
+		A69E97EF1CE0976800642EFB /* PCGroupingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCGroupingTests.m; sourceTree = "<group>"; };
+		A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBuildingEvaluationTreeTests.m; sourceTree = "<group>"; };
+		A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluatingTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +174,11 @@
 		A69E97951CDDFCCA00642EFB /* calculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				A69E97961CDDFCCA00642EFB /* calculatorTests.m */,
 				A69E97981CDDFCCA00642EFB /* Info.plist */,
 				A69E97E51CDFD54600642EFB /* PCTokenizationTests.m */,
+				A69E97EF1CE0976800642EFB /* PCGroupingTests.m */,
+				A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */,
+				A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */,
 			);
 			path = calculatorTests;
 			sourceTree = "<group>";
@@ -417,7 +423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69E97971CDDFCCA00642EFB /* calculatorTests.m in Sources */,
+				A69E97F41CE097E300642EFB /* PCEvaluatingTests.m in Sources */,
+				A69E97F01CE0976800642EFB /* PCGroupingTests.m in Sources */,
+				A69E97F21CE097D700642EFB /* PCBuildingEvaluationTreeTests.m in Sources */,
 				A69E97E61CDFD54600642EFB /* PCTokenizationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
