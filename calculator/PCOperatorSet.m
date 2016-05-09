@@ -14,7 +14,8 @@
 
 @implementation PCOperatorSet
 
-+ (id)defaultOperatorSet {
++ (id)defaultOperatorSet
+{
     static PCOperatorSet *defaultOperatorSet = nil;
     @synchronized(self) {
         if (defaultOperatorSet == nil)
@@ -40,7 +41,8 @@
     return self;
 }
 
--(void)addOperation:(PCToken*)operandToken precedence:(DDPrecedence)precedence {
+-(void)addOperation:(PCToken*)operandToken precedence:(DDPrecedence)precedence
+{
     self -> _operators = [self -> _operators arrayByAddingObject:operandToken];
     NSMutableDictionary *mPrecedence = [[NSMutableDictionary alloc]initWithDictionary:self -> _precedenceDictionary];
     mPrecedence[operandToken.mnemonic] = @(precedence);

@@ -10,7 +10,8 @@
 
 @implementation PCMultiplicationOperationToken
 
--(NSString *)mnemonic {
+-(NSString *)mnemonic
+{
     return @"*";
 }
 

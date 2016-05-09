@@ -10,7 +10,8 @@
 
 @implementation PCDivisionOperatorToken
 
--(NSString *)mnemonic {
+-(NSString *)mnemonic
+{
     return @"/";
 }
 

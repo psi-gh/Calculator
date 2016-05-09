@@ -19,7 +19,8 @@
     return self;
 }
 
--(id)getResult {
+-(id)getResult
+{
     if ([self.token isKindOfClass:[PCPrimitiveValueToken class]]) {
         PCPrimitiveValueToken *token = (id)self.token;
         return [token getValue];

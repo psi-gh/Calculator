@@ -27,7 +27,8 @@
     return node;
 }
 
-+(void)fillNode:(PCEvaluationTreeNode*)node WithTokens:(NSArray*)tokens {
++(void)fillNode:(PCEvaluationTreeNode*)node WithTokens:(NSArray*)tokens
+{
     for (PCToken *token in tokens) {
         if ([token isKindOfClass:[PCGroupToken class]]) {
             PCEvaluationTreeNode *complexNode = [[PCEvaluationTreeNode alloc] init];

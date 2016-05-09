@@ -10,11 +10,13 @@
 
 @implementation PCOperatorToken
 
--(PCArity)arity {
+-(PCArity)arity
+{
     return PCArityBinary;
 }
 
--(PCAssociativity)associativity {
+-(PCAssociativity)associativity
+{
     return PCAssociativityLeft;
 }
 

@@ -20,12 +20,14 @@
 
 @implementation PCMainScreenViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.calculator = [[PCCalculator alloc] init];
 }
 
-- (IBAction)calculateButton:(id)sender {
+- (IBAction)calculateButton:(id)sender
+{
     NSError *error;
     NSNumber *result = [self.calculator evalString:self.inputTextField.text
                                              error:&error];

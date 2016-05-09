@@ -10,7 +10,8 @@
 
 @implementation PCSubstractOperatorToken
 
--(NSString *)mnemonic {
+-(NSString *)mnemonic
+{
     return @"-";
 }
 

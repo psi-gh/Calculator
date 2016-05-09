@@ -18,7 +18,8 @@
 
 @implementation PCGrouper
 
--(NSArray *)groupAllTokensInArray:(NSArray*)tokens {
+-(NSArray *)groupAllTokensInArray:(NSArray*)tokens
+{
     NSMutableArray *resultTokens = [NSMutableArray arrayWithArray:tokens];
 
     for (PCToken *token in resultTokens) {
