@@ -14,6 +14,7 @@
 #import "PCSubstractOperatorToken.h"
 #import "PCGroupToken.h"
 #import "PCGrouper.h"
+#import "PCEvaluatingTreeBuilder.h"
 
 @interface PCBuildingEvaluationTreeTests : XCTestCase
 
@@ -41,7 +42,7 @@
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
     PCEvaluationTreeNode *firstNode2lvl = rootNode.childNodes.firstObject;
     PCEvaluationTreeNode *secondNode2lvl = rootNode.childNodes.lastObject;
     

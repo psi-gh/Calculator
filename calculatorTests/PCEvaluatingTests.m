@@ -14,6 +14,7 @@
 #import "PCSubstractOperatorToken.h"
 #import "PCGroupToken.h"
 #import "PCGrouper.h"
+#import "PCEvaluatingTreeBuilder.h"
 
 @interface PCEvaluatingTests : XCTestCase
 
@@ -40,7 +41,7 @@
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
     XCTAssertEqual([result isEqualToNumber:@(3+(2+1)+1)], YES);
 }
@@ -52,7 +53,7 @@
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
     XCTAssertEqual([result isEqualToNumber:@(16/2)], YES);
 }
@@ -64,7 +65,7 @@
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
     XCTAssertEqual([result isEqualToNumber:@(3+(2+1)-9)], YES);
 }
@@ -76,7 +77,7 @@
     
     PCGrouper *grouper = [[PCGrouper alloc] init];
     NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [grouper generateEvaluationTreeFromGroupedTokens:groupingResult];
+    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
     NSNumber *result = [rootNode getResult];
     XCTAssertEqual([result isEqualToNumber:@(1+2*(3+4))], YES);
 }

@@ -37,6 +37,7 @@
 		A69E97F01CE0976800642EFB /* PCGroupingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97EF1CE0976800642EFB /* PCGroupingTests.m */; };
 		A69E97F21CE097D700642EFB /* PCBuildingEvaluationTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */; };
 		A69E97F41CE097E300642EFB /* PCEvaluatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */; };
+		A69E97F81CE098DC00642EFB /* PCEvaluatingTreeBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		A69E97EF1CE0976800642EFB /* PCGroupingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCGroupingTests.m; sourceTree = "<group>"; };
 		A69E97F11CE097D700642EFB /* PCBuildingEvaluationTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCBuildingEvaluationTreeTests.m; sourceTree = "<group>"; };
 		A69E97F31CE097E300642EFB /* PCEvaluatingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluatingTests.m; sourceTree = "<group>"; };
+		A69E97F61CE098DC00642EFB /* PCEvaluatingTreeBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCEvaluatingTreeBuilder.h; sourceTree = "<group>"; };
+		A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCEvaluatingTreeBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 			children = (
 				A69E97B71CDF358100642EFB /* Tokenization */,
 				A69E97D81CDF8AE800642EFB /* Grouper */,
+				A69E97F51CE0989800642EFB /* Evaluating Tree Builder */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -290,6 +294,15 @@
 				A69E97E81CDFD75A00642EFB /* PCDivisionOperatorToken.m */,
 			);
 			name = Operators;
+			sourceTree = "<group>";
+		};
+		A69E97F51CE0989800642EFB /* Evaluating Tree Builder */ = {
+			isa = PBXGroup;
+			children = (
+				A69E97F61CE098DC00642EFB /* PCEvaluatingTreeBuilder.h */,
+				A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */,
+			);
+			name = "Evaluating Tree Builder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +428,7 @@
 				A69E97B11CDF34C900642EFB /* PCNumberExtractor.m in Sources */,
 				A69E97C51CDF5E5E00642EFB /* PCGroupToken.m in Sources */,
 				A69E977E1CDDFCCA00642EFB /* main.m in Sources */,
+				A69E97F81CE098DC00642EFB /* PCEvaluatingTreeBuilder.m in Sources */,
 				A69E97B41CDF351500642EFB /* PCNumberToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

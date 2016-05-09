@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PCEvaluationTreeNode.h"
 
 @interface PCGrouper : NSObject
 
--(PCEvaluationTreeNode *)generateEvaluationTreeFromGroupedTokens:(NSArray *)tokens;
 -(NSArray *)groupAllTokensInArray:(NSArray*)tokens;
 
 @end
