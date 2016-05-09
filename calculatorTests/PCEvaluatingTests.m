@@ -34,19 +34,7 @@
     [super tearDown];
 }
 
-- (void)testEvaluate {
-    NSString *mathString = @"3+(2+1)+1";
-    NSError *error;
-    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
-    
-    PCGrouper *grouper = [[PCGrouper alloc] init];
-    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
-    PCEvaluationTreeNode *rootNode = [PCEvaluatingTreeBuilder generateEvaluationTreeFromGroupedTokens:groupingResult];
-    NSNumber *result = [rootNode getResult];
-    XCTAssertEqual([result isEqualToNumber:@(3+(2+1)+1)], YES);
-}
-
-- (void)testEvaluateDivision {
+- (void)testEvaluateSimpleOperation {
     NSString *mathString = @"16/2";
     NSError *error;
     NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];

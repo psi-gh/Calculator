@@ -14,8 +14,6 @@
 
 @interface PCGrouper()
 
-@property (nonatomic, assign) NSUInteger endIndex;
-
 @end
 
 @implementation PCGrouper

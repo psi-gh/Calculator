@@ -33,7 +33,26 @@
     [super tearDown];
 }
 
-- (void)testGrouping {
+- (void)testSimpleGrouping {
+    NSString *mathString = @"3+1";
+    NSError *error;
+    NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
+    
+    PCGrouper *grouper = [[PCGrouper alloc] init];
+    NSArray *groupingResult = [grouper groupAllTokensInArray:tokensArray];
+    PCGroupToken *groupedToken1lvl = groupingResult.firstObject;
+    PCNumberToken *groupedToken2lvl1 = groupedToken1lvl.groupedTokens[0];
+    PCAddOperatorToken *groupedToken2lvl2 = groupedToken1lvl.groupedTokens[1];
+    PCNumberToken *groupedToken2lvl3 = groupedToken1lvl.groupedTokens[2];
+    
+    XCTAssertEqual(groupingResult.count, 1);
+    XCTAssertEqual([groupedToken1lvl isKindOfClass:[PCGroupToken class]], YES);
+    XCTAssertEqual([groupedToken2lvl1 isKindOfClass:[PCNumberToken class]], YES);
+    XCTAssertEqual([groupedToken2lvl2 isKindOfClass:[PCAddOperatorToken class]], YES);
+    XCTAssertEqual([groupedToken2lvl3 isKindOfClass:[PCNumberToken class]], YES);
+}
+
+- (void)testGroupingWithGroup {
     NSString *mathString = @"3+(2+1)+1";
     NSError *error;
     NSArray *tokensArray = [self.parser tokenizeString:mathString error:&error];
@@ -46,7 +65,6 @@
     PCGroupToken *groupedToken3lvl = groupedToken2lvl.groupedTokens.lastObject;
     PCGroupToken *groupedToken4lvl = groupedToken3lvl.groupedTokens.lastObject;
     
-    XCTAssertNotNil(tokensArray);
     XCTAssertEqual(groupingResult.count, 1);
     XCTAssertEqual([groupedToken1lvl isKindOfClass:[PCGroupToken class]], YES);
     XCTAssertEqual([groupedToken2lvl isKindOfClass:[PCGroupToken class]], YES);

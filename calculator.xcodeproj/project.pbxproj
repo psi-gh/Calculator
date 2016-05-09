@@ -165,8 +165,6 @@
 				A69E978A1CDDFCCA00642EFB /* LaunchScreen.storyboard */,
 				A69E978D1CDDFCCA00642EFB /* Info.plist */,
 				A69E977C1CDDFCCA00642EFB /* Supporting Files */,
-				A69E97EC1CE094CC00642EFB /* NSError+PCError.h */,
-				A69E97ED1CE094CC00642EFB /* NSError+PCError.m */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
@@ -253,6 +251,8 @@
 		A69E97BB1CDF4C2400642EFB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A69E97EC1CE094CC00642EFB /* NSError+PCError.h */,
+				A69E97ED1CE094CC00642EFB /* NSError+PCError.m */,
 				A69E97B81CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.h */,
 				A69E97B91CDF4C1800642EFB /* NSCharacterSet+PCCharacterSet.m */,
 				A69E97A61CDE6CAD00642EFB /* PCTokenCharacterBuffer.h */,
@@ -268,8 +268,6 @@
 			children = (
 				A69E97D91CDF8B7A00642EFB /* PCGrouper.h */,
 				A69E97DA1CDF8B7A00642EFB /* PCGrouper.m */,
-				A69E97DC1CDF8D5900642EFB /* PCEvaluationTreeNode.h */,
-				A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */,
 			);
 			name = Grouper;
 			sourceTree = "<group>";
@@ -309,6 +307,8 @@
 			children = (
 				A69E97F61CE098DC00642EFB /* PCEvaluatingTreeBuilder.h */,
 				A69E97F71CE098DC00642EFB /* PCEvaluatingTreeBuilder.m */,
+				A69E97DC1CDF8D5900642EFB /* PCEvaluationTreeNode.h */,
+				A69E97DD1CDF8D5900642EFB /* PCEvaluationTreeNode.m */,
 			);
 			name = "Evaluating Tree Builder";
 			sourceTree = "<group>";
@@ -631,6 +631,7 @@
 				A69E979D1CDDFCCA00642EFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A69E979E1CDDFCCA00642EFB /* Build configuration list for PBXNativeTarget "calculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -639,6 +640,7 @@
 				A69E97A01CDDFCCA00642EFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

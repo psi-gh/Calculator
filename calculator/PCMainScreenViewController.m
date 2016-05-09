@@ -31,9 +31,10 @@
                                              error:&error];
     
     if (!result) {
-        self.resultLabel.text = @"Ошибка";
         if (error) {
             self.resultLabel.text = error.localizedDescription;
+        } else {
+            self.resultLabel.text = @"Ошибка";
         }
         
         return;
